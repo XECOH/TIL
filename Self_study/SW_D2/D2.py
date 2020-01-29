@@ -32,14 +32,43 @@ from collections import Counter
 # 1285 는 파이썬으로 논노
 
 # 1288
+# T = int(input())
+# for i in range(1, T+1):
+#     N = input()
+#     k = 1
+#     result = []
+#     while True:
+#         l = str(k * int(N))
+#         for m in range(len(l)):
+#             if int(l[m]) not in result:
+#                 result.append(int(l[m]))
+#                 result.sort()
+#         if result == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]:
+#             res = k * int(N)
+#             break
+#         k += 1
+#     print(f'#{i} {res}')
 
+# 1859
 T = int(input())
-L_n = []
-result = []
-for i in range(1, T+1):
-    N = input()
-    if 1 <= int(N) <= 10**6:
-        for j in range(len(N)):
-            L_n.append(N[j])
-            result.append(L_n[j])
-
+for tc in range(1, T+1):
+    N = int(input())
+    price_lst = list(map(int, input().split()))
+    expenditure = []
+    sum_price = 0
+    sell_price = 0
+    interest = 0
+    for i in range(1, len(price_lst)+1):
+        if price_lst[i-1] <= 10000 and 2 <= N <=1000000:
+            sum_price += price_lst[i-1]
+            sell_price = price_lst[i] * i 
+            if sell_price > sum_price:
+                interest = sell_price - sum_price
+                expenditure.append(interest)
+            
+    print(expenditure)
+    if expenditure[0] < 0:    
+        result = 0
+    else:
+        result = expenditure[0]
+    print(f'#{tc} {result}')   
