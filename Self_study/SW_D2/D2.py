@@ -1,3 +1,4 @@
+
 # 1204
 from collections import Counter
 #
@@ -50,25 +51,143 @@ from collections import Counter
 #     print(f'#{i} {res}')
 
 # 1859
-T = int(input())
-for tc in range(1, T+1):
-    N = int(input())
-    price_lst = list(map(int, input().split()))
-    expenditure = []
-    sum_price = 0
-    sell_price = 0
-    interest = 0
-    for i in range(1, len(price_lst)+1):
-        if price_lst[i-1] <= 10000 and 2 <= N <=1000000:
-            sum_price += price_lst[i-1]
-            sell_price = price_lst[i] * i 
-            if sell_price > sum_price:
-                interest = sell_price - sum_price
-                expenditure.append(interest)
-            
-    print(expenditure)
-    if expenditure[0] < 0:    
-        result = 0
-    else:
-        result = expenditure[0]
-    print(f'#{tc} {result}')   
+# T = int(input())
+# for tc in range(1, T+1):
+#     N = int(input())
+#     price_lst = list(map(int, input().split()))
+#     expenditure = []
+#     sum_price = 0
+#     sell_price = 0
+#     interest = 0
+#     l_i = 0
+#     l_i_lst = []
+#     for i in range(1, len(price_lst)):
+#         sum_price += price_lst[i-1]
+#         sell_price = price_lst[i] * i 
+#         if sell_price > sum_price:
+#             l_i = i
+#             l_i_lst.append(l_i)
+    # for i in range(len(l_i_lst)):
+    #     sum_price += price_lst[i]
+    #     sell_price = price_lst[i] * i 
+    # print(l_i_lst)
+    # print(expenditure)
+    # for i in range(len(expenditure)):
+    #     result += expenditure[i]
+    # print(f'#{tc} {result}')   
+
+# 1926
+# N = int(input())
+# lst_N = []
+# clap_N = [0] * N
+# check_369 = ['3', '6', '9']
+# result = [0] * N
+# if 10 <= N <= 1000:
+#     for i in range(1, N+1):
+#         lst_N.append(i)
+#     for i in range(len(lst_N)):
+#         cnt = 0
+#         for j in range(len(str(lst_N[i]))):
+#             if str(lst_N[i])[j] in check_369:
+#                 cnt += 1
+#                 clap_N[i] = cnt
+#     for i in range(N):
+#         if clap_N[i] != 0:
+#             result[i] = '-' * clap_N[i]
+#         else:
+#             result[i] = lst_N[i]
+# for i in range(len(result)):
+#     print(result[i], end=' ')
+
+# 1940
+# T = int(input())
+# for tc in range(1, T+1):
+#     N = int(input())
+#     acc_lst=[]
+#     v_lst = []
+#     for i in range(N):
+#         acc_lst.append(list(map(int, input().split())))
+#         v = 0
+#     for i in range(len(acc_lst)):
+#         if acc_lst[i][0] == 1:
+#             v = acc_lst[i][1]
+#             v_lst.append(v)
+#         elif acc_lst[i][0] == 2:
+#             v = -(acc_lst[i][1])
+#             v_lst.append(v)
+#         else:
+#             v = 0
+#             v_lst.append(v)
+#     for i in range(1, len(v_lst)):
+#         if v_lst[i-1] < 0 and v_lst[i-1] + v_lst[i] < 0:
+#             v_lst[i-1] = 0
+#         elif v_lst[i] < 0 and v_lst[i-1] + v_lst[i] > 0:
+#             v_lst[i] += v_lst[i-1]
+#         elif v_lst[i] == 0 and v_lst[i-1] > 0:
+#             v_lst[i] += v_lst[i-1]
+#         elif v_lst[i-1] > 0 and v_lst[i] > 0:
+#             v_lst[i] += v_lst[i-1]
+#         elif v_lst[i-1] > 0 and v_lst[i] < 0:
+#             v_lst[i] += v_lst[i-1] 
+#     s = 0
+#     for i in range(len(v_lst)):
+#         s += v_lst[i]
+#     print(f'#{tc} {s}')
+
+# 1945
+# T = int(input())
+# for tc in range(1, T+1):
+#     N = int(input())
+#     a = 0
+#     b = 0
+#     c = 0
+#     d = 0
+#     e = 0
+#     factors = [2, 3, 5, 7, 11]
+#     if 2 <= N <= 10000000:
+#         while N != 1:
+#             if N % 2 == 0:
+#                 N /= 2
+#                 a += 1
+#             if N % 3 == 0:              
+#                 N /= 3
+#                 b += 1
+#             if N % 5 == 0:
+#                 N /= 5
+#                 c += 1
+#             if N % 7 == 0:
+#                 N /= 7
+#                 d += 1
+#             if N % 11 == 0:
+#                 N /= 11
+#                 e += 1
+#     print(f'#{tc} {a} {b} {c} {d} {e}')
+
+# 1946
+# T = int(input())
+# for tc in range(1, T+1):
+#     N = int(input())
+#     t_l = []
+#     result = []
+#     ouput = 0
+#     ans = ''
+#     cnt = 0
+#     ans_10 = []
+#     for i in range(N):
+#         data_input = list(input().split())
+#         t_l.append(data_input)
+#     for i in range(len(t_l)):
+#         output = t_l[i][0] * int(t_l[i][1])
+#         result.append(output)
+#     print(result)
+#     for i in range(len(result)):
+#         ans += result[i]
+    
+#     print(f'#{tc}')
+#     for i in range((len(ans)%10)+1):
+#         ans_10.append(ans[10*i:10*i+10])
+#         print(ans_10[i])
+
+# 1948
+
+ 
