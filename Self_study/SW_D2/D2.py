@@ -190,4 +190,85 @@ from collections import Counter
 
 # 1948
 
- 
+# T = int(input())
+# day_end = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30]
+# mon = [0] * 12
+# result = 0
+# for i in range(1, len(mon)):
+#     mon[0] = 1
+#     mon[i] = mon[i-1] + day_end[i-1]
+# for tc in range(1, T+1):
+#     m1, d1, m2, d2 = list(map(int, input().split()))
+#     s_i = mon[m1-1]+ d1-1
+#     e_i = mon[m2-1]+ d2-1
+#     result = e_i - s_i +1
+#     print(f'#{tc} {result}')
+
+# 1954
+
+# T = int(input())
+# for tc in range(1, T+1):
+#     N = int(input())
+#     result = ['0'] * (N**2)
+#     result[0] = '1'
+#     result[N-1] = str(N)
+#     result[N**2-1] = str(2*N - 1)
+#     result[N**2 -N] = str(3*N - 2)
+#     for i in range(1, N):
+#         result[i] = str(i+1)
+#     r_n = ' '.join(result)
+#     for i in range(1, N+1):
+#         print(r_n[2*N*(i-1):2*N*i])
+
+# 1961
+# def ro90(list):
+#     result = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+#     for i in range(len(list)):
+#         for j in range(len(list)):
+#             if i == 0:
+#                 list[0][j] = result[j][2]
+#             elif i == 1:
+#                 list[1][j] = result[j][1]
+#             else:
+#                 list[2][j] = result[j][0]
+#     return result
+
+# T = int(input())
+# for tc in range(1, T+1):
+#     N = int(input())
+#     matrix = []
+#     for i in range(N):
+#         matrix.append(list(map(int, input().split())))
+#     print(ro90(matrix))
+
+
+# 1970
+
+changes = [50000, 10000, 5000, 1000, 500, 100, 50, 10]
+T = int(input())
+for tc in range(1, T+1):
+    N = int(input())
+    counting = []
+    result = []
+    remain = N
+    for change in changes:
+        if change > N:
+            counting.append(0)
+            continue
+        k = 0
+        while remain > 0:
+            k += 1
+            remain -= change * k
+        counting.append(k-1)
+    print(counting)
+
+
+# 1979
+
+# T= int(input())
+# for tc in range(1, T+1):
+#     n, m = map(int, input().split())
+#     matrix = []
+#     for i in range(n):
+#         matrix.append(list(map(int, input().split())))
+#     dr = []
