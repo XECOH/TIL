@@ -221,26 +221,40 @@ from collections import Counter
 #         print(r_n[2*N*(i-1):2*N*i])
 
 # 1961
-# def ro90(list):
-#     result = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
-#     for i in range(len(list)):
-#         for j in range(len(list)):
-#             if i == 0:
-#                 list[0][j] = result[j][2]
-#             elif i == 1:
-#                 list[1][j] = result[j][1]
-#             else:
-#                 list[2][j] = result[j][0]
-#     return result
+
+# def rot90(list):
+#     n = len(list)
+#     rot_lst = [['0' for _ in range(n)] for _ in range(n)]
+#     for x in range(n):
+#         for y in range(n-1, -1, -1):
+#             rot_lst[x][y] = list[y][x]
+#     for x in range(n):
+#         for y in range(1, int(n/2)+1):
+#             rot_lst[x][y-1], rot_lst[x][-y] = rot_lst[x][-y], rot_lst[x][y-1]
+#     return rot_lst
+
 
 # T = int(input())
 # for tc in range(1, T+1):
 #     N = int(input())
 #     matrix = []
 #     for i in range(N):
-#         matrix.append(list(map(int, input().split())))
-#     print(ro90(matrix))
-
+#         matrix.append(list(map(str, input().split())))
+#     result1 = ''
+#     result2 = ''
+#     result3 = ''
+#     for i in range(N):
+#         for j in range(N):
+#             result1 += rot90(matrix)[i][j]
+#     for i in range(N):
+#         for j in range(N):
+#             result2 += rot90(rot90(matrix))[i][j]
+#     for i in range(N):
+#         for j in range(N):
+#             result3 += rot90(rot90(rot90(matrix)))[i][j]
+#     print(f'#{tc}')
+#     for i in range(1, N+1):
+#         print(result1[N*(i-1):N*i], result2[N*(i-1):N*i], result3[N*(i-1):N*i])
 
 # 1970
 
@@ -252,14 +266,15 @@ for tc in range(1, T+1):
     result = []
     remain = N
     for change in changes:
-        if change > N:
-            counting.append(0)
-            continue
         k = 0
         while remain > 0:
             k += 1
             remain -= change * k
-        counting.append(k-1)
+        if k == 1:
+            counting.append(k-1)
+        else:
+            counting.append(k)
+        remain += change * k
     print(counting)
 
 
