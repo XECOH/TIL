@@ -259,23 +259,42 @@ from collections import Counter
 # 1970
 
 changes = [50000, 10000, 5000, 1000, 500, 100, 50, 10]
+# T = int(input())
+# for tc in range(1, T+1):
+#     N = int(input())
+#     counting = []
+#     result = []
+#     remain = N
+#     for change in changes:
+#         k = 0
+#         while remain > 0:
+#             k += 1
+#             remain -= change * k
+#         if k == 1:
+#             counting.append(k-1)
+#         else:
+#             counting.append(k)
+#         remain += change * k
+#     print(counting)
 T = int(input())
 for tc in range(1, T+1):
     N = int(input())
     counting = []
-    result = []
+    a = 0
+    b = 0
     remain = N
     for change in changes:
-        k = 0
-        while remain > 0:
-            k += 1
-            remain -= change * k
-        if k == 1:
-            counting.append(k-1)
+        a = remain // change
+        counting.append(a)
+        if a == 0 :
+            remain = remain
         else:
-            counting.append(k)
-        remain += change * k
-    print(counting)
+            remain -= change * a
+    print('#{} '.format(tc), end= '')
+    for i in range(len(chages)):
+        print('{}'.format(changes[i]), end = ' ')
+    print()
+
 
 
 # 1979
