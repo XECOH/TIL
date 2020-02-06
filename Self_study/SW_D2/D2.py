@@ -220,6 +220,30 @@ from collections import Counter
 #     for i in range(1, N+1):
 #         print(r_n[2*N*(i-1):2*N*i])
 
+# 1959
+
+# T = int(input())
+# for tc in range(1, T+1):
+#     N, M = map(int, input().split())
+#     A = list(map(int, input().split()))
+#     B = list(map(int, input().split()))
+#     maxV = 0
+#     if len(A) < len(B):
+#         for i in range(abs(N-M)+1):
+#             multiple = 0
+#             for j in range(len(A)):
+#                 multiple += A[j] * B[j+i]
+#             if multiple > maxV:
+#                 maxV = multiple
+#     else:
+#         for i in range(abs(N-M)+1):
+#             multiple = 0
+#             for j in range(len(B)):
+#                 multiple += A[j+i] * B[j]
+#             if multiple > maxV:
+#                 maxV = multiple
+#     print('#{} {}'.format(tc, maxV))
+
 # 1961
 
 # def rot90(list):
@@ -258,7 +282,7 @@ from collections import Counter
 
 # 1970
 
-changes = [50000, 10000, 5000, 1000, 500, 100, 50, 10]
+# changes = [50000, 10000, 5000, 1000, 500, 100, 50, 10]
 # T = int(input())
 # for tc in range(1, T+1):
 #     N = int(input())
@@ -276,25 +300,68 @@ changes = [50000, 10000, 5000, 1000, 500, 100, 50, 10]
 #             counting.append(k)
 #         remain += change * k
 #     print(counting)
+# T = int(input())
+# for tc in range(1, T+1):
+#     N = int(input())
+#     counting = []
+#     a = 0
+#     b = 0
+#     remain = N
+#     for change in changes:
+#         a = remain // change
+#         counting.append(a)
+#         if a == 0 :
+#             remain = remain
+#         else:
+#             remain -= change * a
+#     print('#{} '.format(tc), end= '')
+#     for i in range(len(chages)):
+#         print('{}'.format(changes[i]), end = ' ')
+#     print()
+
+# 1974
+
+def sdoku(list):
+    check = [i for i in range(1, 10)]
+    counting_w = [[0 for _ in range(9)] for _ in range(9)]
+    counting_h = [[0 for _ in range(9)] for _ in range(9)]
+    for i in range(9):
+        for j in range(9):
+            for k in range(9):
+                if list[i][j] == check[k]:
+                    if counting_w[i][k] == 0:
+                        counting_w[i][k] += 1
+                    else:
+                        return 0
+    for i in range(9):
+        for j in range(9):
+            for k in range(9):
+                if list[j][i] == check[k]:
+                    if counting_h[i][k] == 0:
+                        counting_h[i][k] += 1
+                    else:
+                        return 0
+
+    for i in range(3):
+        for j in range(3):
+            counting_c = [0 for _ in range(9)]
+            for k in range(3):
+                for l in range(3):
+                    for m in range(9):
+                        if list[3*i+k][3*j+l] == check[m]:
+                            if counting_c[m] == 0:
+                                counting_c[m] += 1
+                            else:
+                                return 0
+    return 1
+
 T = int(input())
 for tc in range(1, T+1):
-    N = int(input())
-    counting = []
-    a = 0
-    b = 0
-    remain = N
-    for change in changes:
-        a = remain // change
-        counting.append(a)
-        if a == 0 :
-            remain = remain
-        else:
-            remain -= change * a
-    print('#{} '.format(tc), end= '')
-    for i in range(len(chages)):
-        print('{}'.format(changes[i]), end = ' ')
-    print()
-
+    puzzle = []
+    for i in range(9):
+        puzzle.append(list(map(int, input().split())))
+    sdoku(puzzle)
+    print('#{} {}'.format(tc, sdoku(puzzle)))
 
 
 # 1979
@@ -306,3 +373,148 @@ for tc in range(1, T+1):
 #     for i in range(n):
 #         matrix.append(list(map(int, input().split())))
 #     dr = []
+#     dc = []
+#     for i in range(m):
+#         dr.append(i+1)
+#         dc.append(i+1)
+#     cnt = 0
+#     for i in range(n):
+#         for j in range(n):
+#             if matrix[i][j] == 1:
+#                 cnt1 = 1
+#                 if j == 0:
+#                     for k in range(len(dc)):
+#                         nc = j + dc[k]
+#                         if 0 <= nc < n:
+#                             if matrix[i][nc] == 1:
+#                                 cnt1 += 1
+#                             else:
+#                                 break
+#                         else:
+#                             break
+#                     if cnt1 == m:
+#                         cnt += 1
+#                 else:
+#                     if matrix[i][j-1] != 1:
+#                         for k in range(len(dc)):
+#                             nc = j + dc[k]
+#                             if 0 <= nc < n:
+#                                 if matrix[i][nc] == 1:
+#                                     cnt1 += 1
+#                                 else:
+#                                     break
+#                             else:
+#                                 break
+#                         if cnt1 == m:
+#                             cnt += 1
+#
+#     for i in range(n):
+#         for j in range(n):
+#             if matrix[j][i] == 1:
+#                 cnt2 = 1
+#                 if j == 0:
+#                     for k in range(len(dr)):
+#                         nr = j + dr[k]
+#                         if 0 <= nr < n:
+#                             if matrix[nr][i] == 1:
+#                                 cnt2 += 1
+#                             else:
+#                                 break
+#                         else:
+#                             break
+#                     if cnt2 == m:
+#                         cnt += 1
+#                 else:
+#                     if matrix[j-1][i] != 1:
+#                         for k in range(len(dr)):
+#                             nr = j + dr[k]
+#                             if 0 <= nr < n:
+#                                 if matrix[nr][i] == 1:
+#                                     cnt2 += 1
+#                                 else:
+#                                     break
+#                             else:
+#                                 break
+#                         if cnt2 == m:
+#                             cnt += 1
+#     print('#{} {}'.format(tc, cnt))
+
+
+# 1986
+
+# T = int(input())
+# for tc in range(1, T+1):
+#     N = int(input())
+#     lst = list(range(1, N+1))
+#     for n in range(1, len(lst)):
+#         if lst[n] % 2 == 0:
+#             lst[n] *= -1
+#     sum = 0
+#     for n in lst:
+#         sum += n
+#     print(f'#{tc} {sum}')
+
+# 1989
+
+# T = int(input())
+# def is_palindrome(word):
+#     for i in range(1, round(len(word)/2)):
+#         if word[i-1] == word[-i]:
+#             return 1
+#     return 0
+# for tc in range(1, T+1):
+#     word = input()
+#     print(f'#{tc} {is_palindrome(word)}')
+
+# 2001
+
+# T = int(input())
+# for tc in range(1, T+1):
+#     N, M = map(int, input().split())
+#     matrix = []
+#     for i in range(N):
+#         matrix.append(list(map(int, input().split())))
+#     max_sum = 0
+#     for i in range(N-M+1):
+#         for j in range(N-M+1):
+#             sum = 0
+#             for k in range(M):
+#                 for l in range(M):
+#                     sum += matrix[i+k][j+l]
+#             if sum > max_sum:
+#                 max_sum = sum
+#     print('#{} {}'.format(tc, max_sum))
+
+# 2005
+
+# T = int(input())
+# for tc in range(1, T+1):
+#     N = int(input())
+#     triangle = [[] for _ in range(N)]
+#     for i in range(N):
+#         triangle[i].append(1)
+#     for i in range(1, N):
+#         triangle[i].append(1)
+#     for i in range(2, N):
+#         for j in range(1, len(triangle[i-1])):
+#             sum = triangle[i-1][j-1] + triangle[i-1][j]
+#             triangle[i].insert(j, sum)
+#     print('#{}'.format(tc))
+#     for row in triangle:
+#         print(' '.join(map(str,row)))
+
+# 2007
+
+# T = int(input())
+# for tc in range(1, T+1):
+#     word = input()
+#     cnt = 1
+#     stan = word[0]
+#     for i in range(1, len(word)):
+#         if stan == word[i]:
+#             if word[0:i+1] != word[i:2*i+1]:
+#                 continue
+#             else:
+#                 cnt = i
+#                 break
+#     print(f'#{tc} {cnt}')
