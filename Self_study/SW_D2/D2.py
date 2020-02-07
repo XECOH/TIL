@@ -206,19 +206,33 @@ from collections import Counter
 
 # 1954
 
-# T = int(input())
-# for tc in range(1, T+1):
-#     N = int(input())
-#     result = ['0'] * (N**2)
-#     result[0] = '1'
-#     result[N-1] = str(N)
-#     result[N**2-1] = str(2*N - 1)
-#     result[N**2 -N] = str(3*N - 2)
-#     for i in range(1, N):
-#         result[i] = str(i+1)
-#     r_n = ' '.join(result)
-#     for i in range(1, N+1):
-#         print(r_n[2*N*(i-1):2*N*i])
+T = int(input())
+for tc in range(1, T+1):
+    N = int(input())
+    matrix = [[0 for _ in range(N)] for _ in range(N)]
+    matrix[0][0] = 1
+    num = 1
+    currentr = 0
+    currentc = 0
+    while num < N**2:
+        dr = [0, 1, 0, -1]
+        dc = [1, 0, -1, 0]
+        num += 1
+        for i in range(4):
+            nc = currentc + dc[i]
+            nr = currentr + dr[i]
+            if nr < 0 or nr > N or nc < 0 or nc > N: continue
+            if matrix[currentr][nc] == 0:
+                matrix[currentr][nc] = num
+                currentc = nc
+            else:
+                if matrix[nr][currentc] != 0:
+                    matrix[nr][currentc] = num
+                    currentr = nr
+
+
+    for row in matrix:
+        print(row)
 
 # 1959
 
@@ -321,47 +335,47 @@ from collections import Counter
 
 # 1974
 
-def sdoku(list):
-    check = [i for i in range(1, 10)]
-    counting_w = [[0 for _ in range(9)] for _ in range(9)]
-    counting_h = [[0 for _ in range(9)] for _ in range(9)]
-    for i in range(9):
-        for j in range(9):
-            for k in range(9):
-                if list[i][j] == check[k]:
-                    if counting_w[i][k] == 0:
-                        counting_w[i][k] += 1
-                    else:
-                        return 0
-    for i in range(9):
-        for j in range(9):
-            for k in range(9):
-                if list[j][i] == check[k]:
-                    if counting_h[i][k] == 0:
-                        counting_h[i][k] += 1
-                    else:
-                        return 0
-
-    for i in range(3):
-        for j in range(3):
-            counting_c = [0 for _ in range(9)]
-            for k in range(3):
-                for l in range(3):
-                    for m in range(9):
-                        if list[3*i+k][3*j+l] == check[m]:
-                            if counting_c[m] == 0:
-                                counting_c[m] += 1
-                            else:
-                                return 0
-    return 1
-
-T = int(input())
-for tc in range(1, T+1):
-    puzzle = []
-    for i in range(9):
-        puzzle.append(list(map(int, input().split())))
-    sdoku(puzzle)
-    print('#{} {}'.format(tc, sdoku(puzzle)))
+# def sdoku(list):
+#     check = [i for i in range(1, 10)]
+#     counting_w = [[0 for _ in range(9)] for _ in range(9)]
+#     counting_h = [[0 for _ in range(9)] for _ in range(9)]
+#     for i in range(9):
+#         for j in range(9):
+#             for k in range(9):
+#                 if list[i][j] == check[k]:
+#                     if counting_w[i][k] == 0:
+#                         counting_w[i][k] += 1
+#                     else:
+#                         return 0
+#     for i in range(9):
+#         for j in range(9):
+#             for k in range(9):
+#                 if list[j][i] == check[k]:
+#                     if counting_h[i][k] == 0:
+#                         counting_h[i][k] += 1
+#                     else:
+#                         return 0
+#
+#     for i in range(3):
+#         for j in range(3):
+#             counting_c = [0 for _ in range(9)]
+#             for k in range(3):
+#                 for l in range(3):
+#                     for m in range(9):
+#                         if list[3*i+k][3*j+l] == check[m]:
+#                             if counting_c[m] == 0:
+#                                 counting_c[m] += 1
+#                             else:
+#                                 return 0
+#     return 1
+#
+# T = int(input())
+# for tc in range(1, T+1):
+#     puzzle = []
+#     for i in range(9):
+#         puzzle.append(list(map(int, input().split())))
+#     sdoku(puzzle)
+#     print('#{} {}'.format(tc, sdoku(puzzle)))
 
 
 # 1979
@@ -437,6 +451,49 @@ for tc in range(1, T+1):
 #                                 break
 #                         if cnt2 == m:
 #                             cnt += 1
+#     print('#{} {}'.format(tc, cnt))
+
+# T= int(input())
+# for tc in range(1, T+1):
+#     n, m = map(int, input().split())
+#     matrix = [list(map(int, input().split())) for _ in range(n)]
+#     dr = [-1]
+#     dc = [-1]
+#     ans = [0, 0]
+#     cnt = 0
+#     for i in range(m-1):
+#         ans.insert(1, 1)
+#     for i in range(m):
+#         dr.append(i+1)
+#         dc.append(i+1)
+#     for i in range(n):
+#         for j in range(n):
+#             temp = []
+#             for k in range(len(dc)):
+#                 if matrix[i][j] == 1:
+#                     nj = j + dc[k]
+#                     if 0 <= nj and nj < n:
+#                         temp.append(matrix[i][nj])
+#                     elif nj == n or nj < 0:
+#                         temp.append(0)
+#                 else:
+#                     break
+#             if temp == ans:
+#                 cnt += 1
+#     for i in range(n):
+#         for j in range(n):
+#             temp = []
+#             for k in range(len(dr)):
+#                 if matrix[j][i] == 1:
+#                     nj = j + dr[k]
+#                     if 0 <= nj and nj < n:
+#                         temp.append(matrix[nj][i])
+#                     elif nj == n or nj < 0:
+#                         temp.append(0)
+#                 else:
+#                     break
+#             if temp == ans:
+#                 cnt += 1
 #     print('#{} {}'.format(tc, cnt))
 
 
