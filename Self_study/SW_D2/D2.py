@@ -221,14 +221,13 @@ for tc in range(1, T+1):
         for i in range(4):
             nc = currentc + dc[i]
             nr = currentr + dr[i]
-            if nr < 0 or nr > N or nc < 0 or nc > N: continue
+            if nr < 0 or nr == N or nc < 0 or nc == N: continue
             if matrix[currentr][nc] == 0:
                 matrix[currentr][nc] = num
                 currentc = nc
-            else:
-                if matrix[nr][currentc] != 0:
-                    matrix[nr][currentc] = num
-                    currentr = nr
+            elif matrix[nr][currentc] != 0:
+                matrix[nr][currentc] = num
+                currentr = nr
 
 
     for row in matrix:
