@@ -214,24 +214,26 @@ for tc in range(1, T+1):
     num = 1
     currentr = 0
     currentc = 0
+    dr = [0, 1, 0, -1]
+    dc = [1, 0, -1, 0]
     while num < N**2:
-        dr = [0, 1, 0, -1]
-        dc = [1, 0, -1, 0]
-        num += 1
         for i in range(4):
             nc = currentc + dc[i]
             nr = currentr + dr[i]
-            if nr < 0 or nr == N or nc < 0 or nc == N: continue
-            if matrix[currentr][nc] == 0:
-                matrix[currentr][nc] = num
-                currentc = nc
-            elif matrix[nr][currentc] != 0:
-                matrix[nr][currentc] = num
-                currentr = nr
+            while 0 <= nr and nr < N and 0 <= nc and nc < N:
+                if matrix[nr][nc] == 0:
+                    num += 1
+                    matrix[nr][nc] = num
+                    currentc = nc
+                    currentr = nr
+                    nc = currentc + dc[i]
+                    nr = currentr + dr[i]
+                else:
+                    break
 
-
-    for row in matrix:
-        print(row)
+    print('#{}'.format(tc))
+    for i in range(N):
+        print('{}'.format(' '.join(map(str, matrix[i]))))
 
 # 1959
 
