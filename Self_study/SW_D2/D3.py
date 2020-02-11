@@ -195,23 +195,10 @@ for tc in range(1, T+1):
     for i in range(N):
         for j in range(N):
             if i != j:
-                if matrix[i] * matrix[j] not in multiple and matrix[i] * matrix[j] >= 10:
-                    multiple.append(matrix[i]*matrix[j])
-                else:
-                    continue
-    maxV = -1
-    for i in range(len(multiple)):
-        for j in range(len(str(multiple[i]))-1):
-            k = 0
-            while k < len(str(multiple[i])):
-                if int(str(multiple[i])[j]) - int(str(multiple[i])[j]) <= 0:
-                    k += 1
-                else:
-                    break
-            if k == len(str(multiple[i]))-1:
-                if maxV < multiple[i]:
-                    maxV = multiple[i]
-    print('#{} {}'.format(tc, maxV))
+                t = matrix[i] * matrix[j]
+                if t >= 10 and str(t) not in multiple:
+                    multiple.append(str(t))
+    print(multiple)
 
 
 # 1216
