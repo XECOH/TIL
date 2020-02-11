@@ -209,6 +209,7 @@ from collections import Counter
 T = int(input())
 for tc in range(1, T+1):
     N = int(input())
+<<<<<<< HEAD
     result = [[0 for _ in range(N)] for _ in range(N)]
     dr = [-1, 0, 1, 0]
     dc = [0, 1, 0, -1]
@@ -222,6 +223,33 @@ for tc in range(1, T+1):
 #         for j in range(M-1, -1, -1):
 #             print(arr[i][j], end = ' ')
 
+=======
+    matrix = [[0 for _ in range(N)] for _ in range(N)]
+    matrix[0][0] = 1
+    num = 1
+    currentr = 0
+    currentc = 0
+    dr = [0, 1, 0, -1]
+    dc = [1, 0, -1, 0]
+    while num < N**2:
+        for i in range(4):
+            nc = currentc + dc[i]
+            nr = currentr + dr[i]
+            while 0 <= nr and nr < N and 0 <= nc and nc < N:
+                if matrix[nr][nc] == 0:
+                    num += 1
+                    matrix[nr][nc] = num
+                    currentc = nc
+                    currentr = nr
+                    nc = currentc + dc[i]
+                    nr = currentr + dr[i]
+                else:
+                    break
+
+    print('#{}'.format(tc))
+    for i in range(N):
+        print('{}'.format(' '.join(map(str, matrix[i]))))
+>>>>>>> 0fca63b4492d03d1293513926b08ce258ed61129
 
 # 1959
 
@@ -304,7 +332,11 @@ for tc in range(1, T+1):
 #         remain += change * k
 #     print(counting)
 # T = int(input())
+<<<<<<< HEAD
 # for tc in range(1, T + 1):
+=======
+# for tc in range(1, T+1):
+>>>>>>> 0fca63b4492d03d1293513926b08ce258ed61129
 #     N = int(input())
 #     counting = []
 #     a = 0
@@ -313,6 +345,7 @@ for tc in range(1, T+1):
 #     for change in changes:
 #         a = remain // change
 #         counting.append(a)
+<<<<<<< HEAD
 #         if a == 0:
 #             remain = remain
 #         else:
@@ -320,6 +353,15 @@ for tc in range(1, T+1):
 #     print('#{} '.format(tc), end='')
 #     for i in range(len(chages)):
 #         print('{}'.format(changes[i]), end=' ')
+=======
+#         if a == 0 :
+#             remain = remain
+#         else:
+#             remain -= change * a
+#     print('#{} '.format(tc), end= '')
+#     for i in range(len(chages)):
+#         print('{}'.format(changes[i]), end = ' ')
+>>>>>>> 0fca63b4492d03d1293513926b08ce258ed61129
 #     print()
 
 # 1974
@@ -366,6 +408,10 @@ for tc in range(1, T+1):
 #     sdoku(puzzle)
 #     print('#{} {}'.format(tc, sdoku(puzzle)))
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0fca63b4492d03d1293513926b08ce258ed61129
 # 1979
 
 # T= int(input())
@@ -441,6 +487,53 @@ for tc in range(1, T+1):
 #                             cnt += 1
 #     print('#{} {}'.format(tc, cnt))
 
+<<<<<<< HEAD
+=======
+# T= int(input())
+# for tc in range(1, T+1):
+#     n, m = map(int, input().split())
+#     matrix = [list(map(int, input().split())) for _ in range(n)]
+#     dr = [-1]
+#     dc = [-1]
+#     ans = [0, 0]
+#     cnt = 0
+#     for i in range(m-1):
+#         ans.insert(1, 1)
+#     for i in range(m):
+#         dr.append(i+1)
+#         dc.append(i+1)
+#     for i in range(n):
+#         for j in range(n):
+#             temp = []
+#             for k in range(len(dc)):
+#                 if matrix[i][j] == 1:
+#                     nj = j + dc[k]
+#                     if 0 <= nj and nj < n:
+#                         temp.append(matrix[i][nj])
+#                     elif nj == n or nj < 0:
+#                         temp.append(0)
+#                 else:
+#                     break
+#             if temp == ans:
+#                 cnt += 1
+#     for i in range(n):
+#         for j in range(n):
+#             temp = []
+#             for k in range(len(dr)):
+#                 if matrix[j][i] == 1:
+#                     nj = j + dr[k]
+#                     if 0 <= nj and nj < n:
+#                         temp.append(matrix[nj][i])
+#                     elif nj == n or nj < 0:
+#                         temp.append(0)
+#                 else:
+#                     break
+#             if temp == ans:
+#                 cnt += 1
+#     print('#{} {}'.format(tc, cnt))
+
+
+>>>>>>> 0fca63b4492d03d1293513926b08ce258ed61129
 # 1986
 
 # T = int(input())
