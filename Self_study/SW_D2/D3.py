@@ -187,18 +187,18 @@
 
 # 6190
 
-T = int(input())
-for tc in range(1, T+1):
-    N = int(input())
-    matrix = list(map(int, input().split()))
-    multiple = []
-    for i in range(N):
-        for j in range(N):
-            if i != j:
-                t = matrix[i] * matrix[j]
-                if t >= 10 and str(t) not in multiple:
-                    multiple.append(str(t))
-    print(multiple)
+# T = int(input())
+# for tc in range(1, T+1):
+#     N = int(input())
+#     matrix = list(map(int, input().split()))
+#     multiple = []
+#     for i in range(N):
+#         for j in range(N):
+#             if i != j:
+#                 t = matrix[i] * matrix[j]
+#                 if t >= 10 and str(t) not in multiple:
+#                     multiple.append(str(t))
+#     print(multiple)
 
 
 # 1216
@@ -236,3 +236,85 @@ for tc in range(1, T+1):
 #         print('#{} {}'.format(tc, cntr))
 #     else:
 #         print('#{} {}'.format(tc, cnth))
+
+# 1230
+
+# T = 10
+# for tc in range(1, T+1):
+#     f1 = int(input())
+#     s = list(map(int, input().split()))
+#     t = int(input())
+#     f4 = list(map(str, input().split()))
+#     for i in range(len(f4)):
+#         if f4[i] == 'I':
+#             for j in range(int(f4[i+2])):
+#                 s.insert(int(f4[i+1])+j, int(f4[i+3+j]))
+#         elif f4[i] == 'D':
+#             for j in range(int(f4[i+2])):
+#                 s.pop(int(f4[i+1]))
+#         elif f4[i] == 'A':
+#             for j in range(int(f4[i+1])):
+#                 s.append(int(f4[i+2])+j)
+#         else:
+#             continue
+#     print('#{} '.format(tc), end= '')
+#     for i in range(10):
+#         print('{}'.format(s[i]), end= ' ')
+#     print()
+
+# 1234
+
+# T = 1
+# for tc in range(1, T+1):
+#     n, p = map(int, input().split())
+#     p = list(str(p))
+#     temp = []
+#     for i in range(1, len(p)):
+#         if i-1 < len(p):
+#             if p[i-1] == p[i]:
+#                 temp.append(p[i-1])
+#                 for j in range(1, len(p)):
+#                     if 0 <= i-j-1 and i+j < len(p):
+#                         if p[i-j-1] == p[i+j]:
+#                             temp.append(p[i-j-1])
+#                         else:
+#                             break
+#         else:
+#             break
+#         if temp != []:
+#             for k in range(len(temp)):
+#                 p.remove(temp[k])
+#                 p.remove(temp[k])
+#             temp = []
+
+# 4676
+
+# T = int(input())
+# for tc in range(1, T+1):
+#     s = list(input())
+#     n = int(input())
+#     li = list(map(int, input().split()))
+#     cnt = [0 for _ in range(len(s))]
+#     for i in range(n):
+#         for j in range(1, len(cnt)+1):
+#             if li[i] == j:
+#                 cnt[j-1] += 1
+#     li.sort()
+#     li=list(set(li))
+#     for i in range(len(li)):
+#         s.insert(li[i], (cnt[li[i]]) * '-')
+#     print(s)
+
+# 3975
+
+T = int(input())
+for tc in range(1, T+1):
+    a, b, c, d = map(int, input().split())
+    alice = a / b
+    bob = c / d
+    if alice == bob:
+        print('#{} {}'.format(tc, 'DRAW'))
+    elif alice > bob:
+        print('#{} {}'.format(tc, 'ALICE'))
+    else:
+        print('#{} {}'.format(tc, 'BOB'))
