@@ -78,16 +78,7 @@
 # for tc in range(1, T+1):
 #     original = input()
 #     now = '0' * len(original)
-#     s_i = 0
-#     for i in range(len(original)):
-#         if original[i] == 1:
-#             s_i = i
-#             break
-#     cnt = 0
-#     for i in range(s_i+1, len(now)):
-#         now[s_i] = 1
-#         now[i] = 1
-#         cnt += 1
+
 
 # 3131
 
@@ -187,19 +178,25 @@
 
 # 6190
 
-# T = int(input())
-# for tc in range(1, T+1):
-#     N = int(input())
-#     matrix = list(map(int, input().split()))
-#     multiple = []
-#     for i in range(N):
-#         for j in range(N):
-#             if i != j:
-#                 t = matrix[i] * matrix[j]
-#                 if t >= 10 and str(t) not in multiple:
-#                     multiple.append(str(t))
-#     print(multiple)
+T = int(input())
+for tc in range(1, T+1):
+    N = int(input())
+    matrix = list(map(int, input().split()))
+    mm = []
+    multiple = [i for i in range(10, 30000**2+1)]
+    for i in range(N):
+        for j in range(N):
+            if i != j:
+                t = matrix[i] * matrix[j]
+                if t not in mm:
+                    mm.append(t)
 
+    for i in multiple:
+        for j in range(len(str(i))-1):
+            if int(str(i)[j]) - int(str(i)[j+1]) > 0:
+                multiple.remove(i)
+            else:
+                continue
 
 # 1216
 #
@@ -264,28 +261,18 @@
 
 # 1234
 
-# T = 1
+# T = 10
 # for tc in range(1, T+1):
-#     n, p = map(int, input().split())
-#     p = list(str(p))
-#     temp = []
-#     for i in range(1, len(p)):
-#         if i-1 < len(p):
-#             if p[i-1] == p[i]:
-#                 temp.append(p[i-1])
-#                 for j in range(1, len(p)):
-#                     if 0 <= i-j-1 and i+j < len(p):
-#                         if p[i-j-1] == p[i+j]:
-#                             temp.append(p[i-j-1])
-#                         else:
-#                             break
-#         else:
-#             break
-#         if temp != []:
-#             for k in range(len(temp)):
-#                 p.remove(temp[k])
-#                 p.remove(temp[k])
-#             temp = []
+#     l, s = input().split()
+#     s = list(map(int, s))
+#     st = list()
+#     for i in range(int(l)):
+#         if not st or st[-1] != s[i]:
+#             st.append(s[i])
+#         elif st and st[-1] == s[i]:
+#             st.pop()
+#     print('#{} {}'.format(tc, ''.join(map(str, st))))
+
 
 # 4676
 
@@ -307,14 +294,82 @@
 
 # 3975
 
-T = int(input())
-for tc in range(1, T+1):
-    a, b, c, d = map(int, input().split())
-    alice = a / b
-    bob = c / d
-    if alice == bob:
-        print('#{} {}'.format(tc, 'DRAW'))
-    elif alice > bob:
-        print('#{} {}'.format(tc, 'ALICE'))
-    else:
-        print('#{} {}'.format(tc, 'BOB'))
+# T = int(input())
+# for tc in range(1, T+1):
+#     a, b, c, d = map(int, input().split())
+#     alice = a / b
+#     bob = c / d
+#     if alice == bob:
+#         print('#{} {}'.format(tc, 'DRAW'))
+#     elif alice > bob:
+#         print('#{} {}'.format(tc, 'ALICE'))
+#     else:
+#         print('#{} {}'.format(tc, 'BOB'))
+
+# 1240
+
+# T = int(input())
+# num = ['0001101', '0011001', '0010011', '0111101', '0100011', '0110001', '0101111', '0111011', '0110111', '0001011']
+# for tc in range(1, T+1):
+#     n, m = map(int, input().split())
+#     code = [list(map(int, input())) for _ in range(n)]
+#     ncode = []
+#     nncode = []
+#     sri = 0
+#     for i in range(n):
+#         if 1 in code[i]:
+#             sri = i
+#             break
+#     sci = 0
+#     for i in range(m-1, -1, -1):
+#         if code[sri][i] == 1:
+#             sci = i
+#             break
+#     ncode = code[sri][sci-55:sci+1]
+#     for i in range(8):
+#         for j in range(10):
+#             if ''.join(map(str, ncode[7*i:7*(i+1)])) == num[j]:
+#                 nncode.append(j)
+#
+#     check = 0
+#     if (((nncode[0]+nncode[2]+nncode[4]+nncode[6])*3 + nncode[1]+ nncode[3] + nncode[5]) % 10 + nncode[7]) % 10 == 0:
+#         for i in nncode:
+#             check += i
+#     else:
+#         check = 0
+
+    # print('#{} {}'.format(tc, check))
+
+# 2948
+
+# T = int(input())
+# for tc in range(1, T+1):
+#     n, m = map(int, input().split())
+#     nl = list(map(str, input().split()))
+#     ml = list(map(str, input().split()))
+#     tl = list(set(nl+ml))
+#     result = n+m - len(tl)
+#     print('#{} {}'.format(tc, result))
+
+# 3233
+
+# T = int(input())
+# for tc in range(1, T+1):
+#     a, b = map(int, input().split())
+
+# 3282
+
+# T = int(input())
+# for tc in range(1, T+1):
+#     n, k = map(int, input().split())
+#     items = [list(map(int, input().split())) for _ in range(n)]
+#     maxV = 0
+#     for i in range(n):
+#         temp = 0
+#         for j in range(i+1, n):
+#             if (items[i][0] + items[j][0]) <= k:
+#                 temp += items[i][1] + items[j][1]
+#                 if temp > maxV:
+#                     maxV = temp
+#                     temp = 0
+#     print('#{} {}'.format(tc, maxV))
