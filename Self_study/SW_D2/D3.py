@@ -178,25 +178,24 @@
 
 # 6190
 
-T = int(input())
-for tc in range(1, T+1):
-    N = int(input())
-    matrix = list(map(int, input().split()))
-    mm = []
-    multiple = [i for i in range(10, 30000**2+1)]
-    for i in range(N):
-        for j in range(N):
-            if i != j:
-                t = matrix[i] * matrix[j]
-                if t not in mm:
-                    mm.append(t)
-
-    for i in multiple:
-        for j in range(len(str(i))-1):
-            if int(str(i)[j]) - int(str(i)[j+1]) > 0:
-                multiple.remove(i)
-            else:
-                continue
+# T = int(input())
+# for tc in range(1, T+1):
+#     N = int(input())
+#     matrix = list(map(int, input().split()))
+#     mm = []
+#     multiple = [i for i in range(10, 30000**2+1)]
+#     for i in range(N):
+#         for j in range(N):
+#             if i != j:
+#                 t = matrix[i] * matrix[j]
+#                 if t not in mm:
+#                     mm.append(t)
+#     for i in multiple:
+#         for j in range(len(str(i))-1):
+#             if int(str(i)[j]) - int(str(i)[j+1]) > 0:
+#                 multiple.remove(i)
+#             else:
+#                 continue
 
 # 1216
 #
@@ -373,3 +372,27 @@ for tc in range(1, T+1):
 #                     maxV = temp
 #                     temp = 0
 #     print('#{} {}'.format(tc, maxV))
+
+# 3499
+
+# T = int(input())
+# for tc in range(1, T+1):
+#     n = int(input())
+#     given = list(map(str, input().split()))
+#     half = int(n / 2)
+#     ans = []
+#     if n % 2 == 0:
+#         given1 = list(given[0: half])
+#         given2 = list(given[half:])
+#     else:
+#         given1 = list(given[0: half])
+#         given2 = list(given[half+1: ])
+#     for i in range(half):
+#         ans.append(given1[i])
+#         ans.append(given2[i])
+#     if n % 2:
+#         ans.append(given[half])
+#     print('#{} '.format(tc), end='')
+#     for i in range(n):
+#         print('{}'.format(ans[i]), end= ' ')
+#     print()
