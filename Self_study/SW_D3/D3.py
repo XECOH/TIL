@@ -377,16 +377,19 @@
 
 # 4676
 
-# T = int(input())
-# for tc in range(1, T+1):
-#     words = list(map(str, input()))
-#     h = int(input())
-#     hi = list(map(int, input().split()))
-#     while h > 0:
-#         for i in range(len(hi)):
-#             words.insert(hi[i], '-')
-#             h -= 1
-#     print(words)
+T = int(input())
+for tc in range(1, T+1):
+    words = list(input())
+    h = int(input())
+    hi = list(map(int, input().split()))
+    counting = [0] * (h+1)
+    for i in hi:
+        for j in range(h+1):
+            if i == j:
+                counting[j] += 1
+    for i in range(h+1):
+        if counting[i] > 0:
+
 
 # 5215
 
@@ -501,22 +504,24 @@
 
 # 1229
 
-T = 1
-for tc in range(1, T+1):
-    f1 = int(input())
-    s = list(map(int, input().split()))
-    t = int(input())
-    f4 = list(map(str, input().split()))
-    for i in range(len(f4)):
-        if f4[i] == 'I':
-            for j in range(int(f4[i+2])):
-                s.insert(int(f4[i+1])+j, int(f4[i+3+j]))
-        elif f4[i] == 'D':
-            for j in range(int(f4[i+2])):
-                s.pop(int(f4[i+1]))
-        else:
-            continue
-    print('#{} '.format(tc), end= '')
-    for i in range(10):
-        print('{}'.format(s[i]), end= ' ')
-    print()
+# T = 1
+# for tc in range(1, T+1):
+#     f1 = int(input())
+#     s = list(map(int, input().split()))
+#     t = int(input())
+#     f4 = list(map(str, input().split()))
+#     for i in range(len(f4)):
+#         if f4[i] == 'I':
+#             for j in range(int(f4[i+2])):
+#                 s.insert(int(f4[i+1])+j, int(f4[i+3+j]))
+#         elif f4[i] == 'D':
+#             for j in range(int(f4[i+2])):
+#                 s.pop(int(f4[i+1]))
+#         else:
+#             continue
+#     print('#{} '.format(tc), end= '')
+#     for i in range(10):
+#         print('{}'.format(s[i]), end= ' ')
+#     print()
+
+
