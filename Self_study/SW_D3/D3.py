@@ -377,19 +377,24 @@
 
 # 4676
 
-T = int(input())
-for tc in range(1, T+1):
-    words = list(input())
-    h = int(input())
-    hi = list(map(int, input().split()))
-    counting = [0] * (h+1)
-    for i in hi:
-        for j in range(h+1):
-            if i == j:
-                counting[j] += 1
-    for i in range(h+1):
-        if counting[i] > 0:
-
+# T = int(input())
+# for tc in range(1, T+1):
+#     words = list(input())
+#     h = int(input())
+#     hi = list(map(int, input().split()))
+#     counting = [0] * (len(words)+1)
+#     for i in hi:
+#         for j in range(len(words)+1):
+#             if i == j:
+#                 counting[j] += 1
+#     expand = 0
+#     for i in range(len(words)+1):
+#         if counting[i] != 0:
+#             words.insert(i + expand, '-' * counting[i])
+#             expand += 1
+#         else:
+#             continue
+#     print('#{} {}'.format(tc, ''.join(words)))
 
 # 5215
 
@@ -524,4 +529,69 @@ for tc in range(1, T+1):
 #         print('{}'.format(s[i]), end= ' ')
 #     print()
 
+# 5789
 
+# for tc in range(int(input())):
+#     n, q = map(int, input().split())
+#     box = [0] * (n+1)
+#     order = [list(map(int, input().split())) for _ in range(q)]
+#     for i in range(q):
+#         for j in range(order[i][0], order[i][1]+1):
+#             box[j] = i+1
+#     box.pop(0)
+#     print('#{} {}'.format(tc+1, ' '.join(map(str, box))))
+
+# 1289
+
+# for tc in range(int(input())):
+#     original = list(map(int, input()))
+#     present = [0] * len(original)
+#     cnt = 0
+#     while original != present:
+#         for i in range(len(original)):
+#             if original[i] != present[i]:
+#                 for j in range(i, len(original)):
+#                     present[j] = 1 - present[j]
+#                 cnt += 1
+
+#     print('#{} {}'.format(tc+1, cnt))
+
+# 5603
+
+# for tc in range(int(input())):
+#     n = int(input())
+#     hay = list(int(input()) for _ in range(n))
+#     sum = 0
+#     for i in range(n):
+#         sum += hay[i]
+#     avg = sum // n
+#     cnt = 0
+#     for i in hay:
+#         if i > avg:
+#             cnt += (i-avg)
+#     print('#{} {}'.format(tc+1, cnt))
+
+# 3975 > 시간초과
+
+# wr = [[0 for _ in range(101)] for _ in range(101)]
+# for i in range(0, 101):
+#     for j in range(1, 101):
+#         wr[i][j] = i / j
+# for tc in range(int(input())):
+#     a, b, c, d = map(int, input().split())
+#     ALICE = wr[a][b]
+#     BOB = wr[c][d]
+#     result = 'DRAW'
+#     if ALICE > BOB:
+#         result = 'ALICE'
+#     elif ALICE < BOB:
+#         result = 'BOB'
+#     print('#{} {}'.format(tc+1, result))
+
+# 6019
+
+for tc in range(int(input())):
+    d, a, b, f = map(int, input().split())
+    h = d / (a + b)
+    result = h * f
+    print('#{} {}'.format(tc+1, result))
