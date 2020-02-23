@@ -353,27 +353,22 @@
 
 # 3750
 
-# T = int(input())
-# for tc in range(1, T+1):
-#     n = input()
-#     if len(n) == 1:
-#         result = n
+# for tc in range(int(input())):
+#     nums = input()
+#     ans = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+#     if int(nums) < 10:
+#         print('#{} {}'.format(tc+1, int(nums)))
 #     else:
 #         sum = 0
-#         for i in range(len(n)):
-#             sum += int(n[i])
-#         n = sum
-#         if len(str(n)) > 1:
-#             while len(str(n)) > 1:
-#                 sum = 0
-#                 for i in range(len(str(n))):
-#                     sum += int(str(n)[i])
-#                 n = sum
-#             result = n
+#         for i in range(len(nums)):
+#             sum += int(nums[i])
+#         if sum >= 10:
+#             result = ans[(sum%9)-1]
+#             print('#{} {}'.format(tc+1, result))
 #         else:
-#             result = n
-#
-#     print('#{} {}'.format(tc, result))
+#             result = sum
+#             print('#{} {}'.format(tc+1, result))
+
 
 # 4676
 
@@ -573,25 +568,113 @@
 
 # 3975 > 시간초과
 
-# wr = [[0 for _ in range(101)] for _ in range(101)]
-# for i in range(0, 101):
-#     for j in range(1, 101):
-#         wr[i][j] = i / j
-# for tc in range(int(input())):
-#     a, b, c, d = map(int, input().split())
-#     ALICE = wr[a][b]
-#     BOB = wr[c][d]
-#     result = 'DRAW'
-#     if ALICE > BOB:
-#         result = 'ALICE'
-#     elif ALICE < BOB:
-#         result = 'BOB'
-#     print('#{} {}'.format(tc+1, result))
+#for tc in range(int(input())):
+#    a, b, c, d = map(int, input().split())
+
 
 # 6019
 
+# for tc in range(int(input())):
+#     d, a, b, f = map(int, input().split())
+#     h = d / (a + b)
+#     result = h * f
+#     print('#{} {}'.format(tc+1, result))
+
+# 3376
+#
+# for tc in range(int(input())):
+#     n = int(input())
+#     padoban = [1, 1, 1, 2, 2]
+#     for i in range(5, n):
+#         padoban.append(padoban[i-3] + padoban[i-2])
+#     print('#{} {}'.format(tc+1, padoban[n-1]))
+
+# 1244
+
+#for tc in range(int(input())):
+#    nums, t = map(int, input().split())
+#    nums = list(map(int, str(nums)))
+#    for i in range(t):
+
+
+
+    # print('#{} {}'.format(tc+1, ''.join(map(str, nums))))
+
+# 3809
+
+# for tc in range(int(input())):
+#     n = int(input())
+#     nums = list()
+#     if n % 20 == 0:
+#         for i in range(n//20):
+#             nums += input().split()
+#     else:
+#         for i in range((n//20)+1):
+#             nums += input().split()
+#     d = list()
+#     for i in range(n):
+#         for j in range(1, 3):
+#             if nums[i:i+j] != [] and int(''.join(map(str, nums[i:i+j]))) not in d:
+#                 d.append(int(''.join(map(str, nums[i:i+j]))))
+#     d.sort()
+#     for i in range(100):
+#         if i not in d:
+#             print('#{} {}'.format(tc+1, i))
+#             break
+
+# 2817
+
+# for tc in range(int(input())):
+#     n, k = map(int, input().split())
+#     nums = list(map(int, input().split()))
+#     cnt = 0
+#     for i in range(1<<n):
+#         sum = 0
+#         for j in range(n):
+#             if i&(1<<j):
+#                 sum += nums[j]
+#             if sum == k:
+#                 cnt += 1
+#     print('#{} {}'.format(tc+1, cnt))
+
+# 4522
+
+# for tc in range(int(input())):
+#     given = input()
+#     result = 'Exist'
+#     for i in range(1, (len(given)//2)+1):
+#         if given[i-1] == '?' or given[-i] == '?':
+#             continue
+#         elif given[i-1] != '?' or given[-i] != '?' and given[i-1] != given[-i]:
+#             result = 'Not exist'
+#             break
+#     print('#{} {}'.format(tc+1, result))
+
+# 3304
+#
+# for tc in range(int(input())):
+#     s1, s2 = input().split()
+#
+
+# 3233
+
+# for tc in range(int(input())):
+#     a, b = map(int, input().split())
+#     if b > a//2:
+#         result = 1
+#     else:
+#         result = (a // b) ** 2
+#     print('#{} {}'.format(tc+1, result))
+
+# 4371
+
+#for tc in range(int(input())):
+#    n = int(input())
+#    day = list(int(input()) for _  in range(n))
+
+
+# 4789
+
 for tc in range(int(input())):
-    d, a, b, f = map(int, input().split())
-    h = d / (a + b)
-    result = h * f
-    print('#{} {}'.format(tc+1, result))
+    nums = list(map(int, input()))
+    cnt = 0
