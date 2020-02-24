@@ -668,13 +668,51 @@
 
 # 4371
 
-#for tc in range(int(input())):
-#    n = int(input())
-#    day = list(int(input()) for _  in range(n))
-
+for tc in range(int(input())):
+    n = int(input())
+    day = list(int(input()) for _  in range(n))
+    st = [1]
+    cnt = 0
+    while st != day:
+        cnt += 1
+        stan = day[cnt] - day[0]
+        st.append(day[cnt])
+        for i in range(cnt, len(day)-1):
+            st.sort()
+            if st == day :
+                break
+            elif day[i+1]-day[cnt] == stan and day[i+1] not in st:
+                st.append(day[i+1])
+                stan += stan
+    print('#{} {}'.format(tc+1, cnt))
 
 # 4789
 
-for tc in range(int(input())):
-    nums = list(map(int, input()))
-    cnt = 0
+# for tc in range(int(input())):
+#     nums = list(map(int, input()))
+#     cnt = 0
+
+# 7675
+
+# for tc in range(int(input())):
+#     n = int(input())
+#     sen = list(input().split())
+#     total = [0] * n
+#     upper = [chr(i) for i in range(65, 91)]
+#     for i in range(n):
+#         cnt = 0
+#         idx = 0
+#         for word in sen:
+#             for j in range(len(word)):
+#                 if word[j] in upper:
+#                     cnt += 1
+#                 if cnt >= 2:
+#                     sen.pop(0)
+#                     break
+#             idx += 1
+#             if word[-1] == '.' or word[-1] == '?' or word[-1] == '!':
+#                 for k in range(idx):
+#                     sen.pop(0)
+#                 break
+#         total[i] = cnt
+#     print(total)
