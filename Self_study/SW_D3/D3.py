@@ -336,13 +336,12 @@
 
 # 3408
 
-# T = int(input())
-# for tc in range(1, T+1):
+# for tc in range(int(input())):
 #     n = int(input())
-#     s1 = int((n*(n+1))/2)
+#     s1 = (n*(n+1))// 2
 #     s2 = n**2
 #     s3 = n**2 + n
-#     print('#{} {} {} {}'.format(tc, s1, s2, s3))
+#     print('#{} {} {} {}'.format(tc+1, s1, s2, s3))
 
 # 3499
 
@@ -353,21 +352,27 @@
 
 # 3750
 
+# ans = list()
 # for tc in range(int(input())):
 #     nums = input()
-#     ans = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+#     f = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 #     if int(nums) < 10:
-#         print('#{} {}'.format(tc+1, int(nums)))
+#         ans.append(int(nums))
 #     else:
 #         sum = 0
 #         for i in range(len(nums)):
 #             sum += int(nums[i])
 #         if sum >= 10:
-#             result = ans[(sum%9)-1]
-#             print('#{} {}'.format(tc+1, result))
+#             result = f[(sum%9)-1]
+#             ans.append(result)
 #         else:
 #             result = sum
-#             print('#{} {}'.format(tc+1, result))
+#             ans.append(result)
+#
+# j = 1
+# for i in ans:
+#     print('#{} {}'.format(j, i))
+#     j += 1
 
 
 # 4676
@@ -392,11 +397,13 @@
 #     print('#{} {}'.format(tc, ''.join(words)))
 
 # 5215
-
-# T = int(input())
-# for tc in range(1, T+1):
+#
+# from itertools import permutations
+#
+# for tc in range(int(input())):
 #     n, l = map(int, input().split())
-#     for i in range(n):
+#     ing = list(list(map(int, input().split())) for _ in range(n))
+#     maxV = 0
 
 # 5601
 
@@ -410,16 +417,16 @@
 
 # 5607
 
-# T = int(input())
-# for tc in range(1, T+1):
+# for tc in range(int(input())):
 #     n, r = map(int, input().split())
 #     result1 = 1
 #     result2 = 1
-#     for i in range(r):
-#         result1 *= n-i
-#         result2 *= r-i
-#     result = int((result1 / result2) % 1234567891)
-#     print('#{} {}'.format(tc, result))
+#     for i in range(1, n+1):
+#         result1 *= i
+#     for j in range(1, r+1):
+#         result2 *= ((i * (n-i)) ** (1234567891-2))
+#
+#     print('#{} {}'.format(tc+1, ))
 
 # 5688
 
@@ -566,11 +573,25 @@
 #             cnt += (i-avg)
 #     print('#{} {}'.format(tc+1, cnt))
 
-# 3975 > 시간초과
+# 3975
 
-#for tc in range(int(input())):
-#    a, b, c, d = map(int, input().split())
-
+# ans = list()
+# for tc in range(int(input())):
+#     a, b, c, d = map(int, input().split())
+#     alice = a / b
+#     bob = c / d
+#     if alice > bob:
+#         result= 'ALICE'
+#     elif alice < bob:
+#         result = 'BOB'
+#     elif alice == bob:
+#         result = 'DRAW'
+#     ans.append(result)
+#
+# j = 1
+# for i in ans:
+#     print('#{} {}'.format(j, i))
+#     j = j+1
 
 # 6019
 
@@ -604,23 +625,8 @@
 
 # for tc in range(int(input())):
 #     n = int(input())
-#     nums = list()
-#     if n % 20 == 0:
-#         for i in range(n//20):
-#             nums += input().split()
-#     else:
-#         for i in range((n//20)+1):
-#             nums += input().split()
-#     d = list()
-#     for i in range(n):
-#         for j in range(1, 3):
-#             if nums[i:i+j] != [] and int(''.join(map(str, nums[i:i+j]))) not in d:
-#                 d.append(int(''.join(map(str, nums[i:i+j]))))
-#     d.sort()
-#     for i in range(100):
-#         if i not in d:
-#             print('#{} {}'.format(tc+1, i))
-#             break
+#     nums = list(map(int, input().split()) for _ in range(n//20))
+
 
 # 2817
 
@@ -668,23 +674,10 @@
 
 # 4371
 
-for tc in range(int(input())):
-    n = int(input())
-    day = list(int(input()) for _  in range(n))
-    st = [1]
-    cnt = 0
-    while st != day:
-        cnt += 1
-        stan = day[cnt] - day[0]
-        st.append(day[cnt])
-        for i in range(cnt, len(day)-1):
-            st.sort()
-            if st == day :
-                break
-            elif day[i+1]-day[cnt] == stan and day[i+1] not in st:
-                st.append(day[i+1])
-                stan += stan
-    print('#{} {}'.format(tc+1, cnt))
+# for tc in range(int(input())):
+#     n = int(input())
+#     day = list(int(input()) for _  in range(n))
+
 
 # 4789
 
@@ -697,22 +690,52 @@ for tc in range(int(input())):
 # for tc in range(int(input())):
 #     n = int(input())
 #     sen = list(input().split())
-#     total = [0] * n
-#     upper = [chr(i) for i in range(65, 91)]
+#     upper= list(chr(i) for i in range(65, 91))
+#     lower = list(chr(i) for i in range(97, 123))
+#     ans = [0] * n
 #     for i in range(n):
 #         cnt = 0
-#         idx = 0
 #         for word in sen:
 #             for j in range(len(word)):
-#                 if word[j] in upper:
-#                     cnt += 1
-#                 if cnt >= 2:
-#                     sen.pop(0)
-#                     break
-#             idx += 1
-#             if word[-1] == '.' or word[-1] == '?' or word[-1] == '!':
-#                 for k in range(idx):
-#                     sen.pop(0)
-#                 break
-#         total[i] = cnt
-#     print(total)
+
+# 2806
+
+# def check(j):
+#     global cnt
+#     if promising() ==:
+#
+#     elif c == n:
+#         cnt += 1
+#         return
+#     else:
+#
+#
+#
+# def promising(j):
+#     for i in range():
+#
+#
+#
+# for tc in range(int(input())):
+#     n = int(input())
+#     c = [0] * (n+1)
+#     cnt = 0
+#     check(1)
+#     print('#{} {}'.format(tc+1, cnt))
+
+# 6485
+
+# for tc in range(int(input())):
+#     n = int(input())
+#     bus = list(list(map(int, input().split())) for _ in range(n))
+#     p = int(input())
+#     stops = list(int(input()) for _ in range(p))
+#     total = [0] * 5001
+#     for i in range(n):
+#         for j in range(bus[i][0], bus[i][1]+1):
+#             total[j] += 1
+#     print('#{} '.format(tc+1), end= '')
+#     for i in range(p):
+#         print('{}'.format(total[stops[i]]), end = ' ')
+#     print()
+
