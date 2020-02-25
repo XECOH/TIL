@@ -1,5 +1,5 @@
 # 1204
-from collections import Counter
+# from collections import Counter
 
 #
 # t = int(input())
@@ -51,30 +51,12 @@ from collections import Counter
 #     print(f'#{i} {res}')
 
 # 1859
-# T = int(input())
-# for tc in range(1, T+1):
-#     N = int(input())
-#     price_lst = list(map(int, input().split()))
-#     expenditure = []
-#     sum_price = 0
-#     sell_price = 0
-#     interest = 0
-#     l_i = 0
-#     l_i_lst = []
-#     for i in range(1, len(price_lst)):
-#         sum_price += price_lst[i-1]
-#         sell_price = price_lst[i] * i
-#         if sell_price > sum_price:
-#             l_i = i
-#             l_i_lst.append(l_i)
-# for i in range(len(l_i_lst)):
-#     sum_price += price_lst[i]
-#     sell_price = price_lst[i] * i
-# print(l_i_lst)
-# print(expenditure)
-# for i in range(len(expenditure)):
-#     result += expenditure[i]
-# print(f'#{tc} {result}')
+
+for tc in range(int(input())):
+    n = int(input())
+    v = list(map(int, input().split()))
+
+
 
 # 1926
 # N = int(input())
@@ -206,13 +188,12 @@ from collections import Counter
 
 # 1954
 
-T = int(input())
-for tc in range(1, T+1):
-    N = int(input())
-<<<<<<< HEAD
-    result = [[0 for _ in range(N)] for _ in range(N)]
-    dr = [-1, 0, 1, 0]
-    dc = [0, 1, 0, -1]
+# T = int(input())
+# for tc in range(1, T+1):
+#     N = int(input())
+#     result = [[0 for _ in range(N)] for _ in range(N)]
+#     dr = [-1, 0, 1, 0]
+#     dc = [0, 1, 0, -1]
     
 # coaching
 # for i in range(N):
@@ -223,33 +204,32 @@ for tc in range(1, T+1):
 #         for j in range(M-1, -1, -1):
 #             print(arr[i][j], end = ' ')
 
-=======
-    matrix = [[0 for _ in range(N)] for _ in range(N)]
-    matrix[0][0] = 1
-    num = 1
-    currentr = 0
-    currentc = 0
-    dr = [0, 1, 0, -1]
-    dc = [1, 0, -1, 0]
-    while num < N**2:
-        for i in range(4):
-            nc = currentc + dc[i]
-            nr = currentr + dr[i]
-            while 0 <= nr and nr < N and 0 <= nc and nc < N:
-                if matrix[nr][nc] == 0:
-                    num += 1
-                    matrix[nr][nc] = num
-                    currentc = nc
-                    currentr = nr
-                    nc = currentc + dc[i]
-                    nr = currentr + dr[i]
-                else:
-                    break
+#     matrix = [[0 for _ in range(N)] for _ in range(N)]
+#     matrix[0][0] = 1
+#     num = 1
+#     currentr = 0
+#     currentc = 0
+#     dr = [0, 1, 0, -1]
+#     dc = [1, 0, -1, 0]
+#     while num < N**2:
+#         for i in range(4):
+#             nc = currentc + dc[i]
+#             nr = currentr + dr[i]
+#             while 0 <= nr and nr < N and 0 <= nc and nc < N:
+#                 if matrix[nr][nc] == 0:
+#                     num += 1
+#                     matrix[nr][nc] = num
+#                     currentc = nc
+#                     currentr = nr
+#                     nc = currentc + dc[i]
+#                     nr = currentr + dr[i]
+#                 else:
+#                     break
+#
+#     print('#{}'.format(tc))
+#     for i in range(N):
+#         print('{}'.format(' '.join(map(str, matrix[i]))))
 
-    print('#{}'.format(tc))
-    for i in range(N):
-        print('{}'.format(' '.join(map(str, matrix[i]))))
->>>>>>> 0fca63b4492d03d1293513926b08ce258ed61129
 
 # 1959
 
@@ -332,11 +312,11 @@ for tc in range(1, T+1):
 #         remain += change * k
 #     print(counting)
 # T = int(input())
-<<<<<<< HEAD
+
 # for tc in range(1, T + 1):
-=======
+
 # for tc in range(1, T+1):
->>>>>>> 0fca63b4492d03d1293513926b08ce258ed61129
+
 #     N = int(input())
 #     counting = []
 #     a = 0
@@ -345,7 +325,7 @@ for tc in range(1, T+1):
 #     for change in changes:
 #         a = remain // change
 #         counting.append(a)
-<<<<<<< HEAD
+
 #         if a == 0:
 #             remain = remain
 #         else:
@@ -353,7 +333,7 @@ for tc in range(1, T+1):
 #     print('#{} '.format(tc), end='')
 #     for i in range(len(chages)):
 #         print('{}'.format(changes[i]), end=' ')
-=======
+
 #         if a == 0 :
 #             remain = remain
 #         else:
@@ -361,7 +341,7 @@ for tc in range(1, T+1):
 #     print('#{} '.format(tc), end= '')
 #     for i in range(len(chages)):
 #         print('{}'.format(changes[i]), end = ' ')
->>>>>>> 0fca63b4492d03d1293513926b08ce258ed61129
+
 #     print()
 
 # 1974
@@ -408,10 +388,6 @@ for tc in range(1, T+1):
 #     sdoku(puzzle)
 #     print('#{} {}'.format(tc, sdoku(puzzle)))
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 0fca63b4492d03d1293513926b08ce258ed61129
 # 1979
 
 # T= int(input())
@@ -487,8 +463,7 @@ for tc in range(1, T+1):
 #                             cnt += 1
 #     print('#{} {}'.format(tc, cnt))
 
-<<<<<<< HEAD
-=======
+
 # T= int(input())
 # for tc in range(1, T+1):
 #     n, m = map(int, input().split())
@@ -533,7 +508,7 @@ for tc in range(1, T+1):
 #     print('#{} {}'.format(tc, cnt))
 
 
->>>>>>> 0fca63b4492d03d1293513926b08ce258ed61129
+
 # 1986
 
 # T = int(input())
