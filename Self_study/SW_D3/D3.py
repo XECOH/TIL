@@ -750,67 +750,117 @@
 
 # 1873
 
-for TC in range(int(input())):
-    h, w = map(int, input().split())
-    field = [ list(input()) for _ in range(h)]
-    n = int(input())
-    given = input()
-    tank = [0, '>', '<', 'v', '^']
-    for i in range(h):
-        for j in range(w):
-            if field[i][j] in tank:
-                tr = i
-                tc = j
-    field[tr][tc] = tank.index(field[tr][tc])
-    dr = [0, 0, 0, 1, -1]
-    dc = [0, 1, -1, 0, 0]
-    for o in given:
-        if o == 'S':
-            cr = tr
-            cc = tc
-            d = field[tr][tc]
-            while True:
-                nr = cr+dr[d]
-                nc = cc+dc[d]
-                if nr < 0 or nr >= h or nc < 0 or nc >= w: break
-                if field[nr][nc] == '-' or field[nr][nc] == '.':
-                    cr = nr
-                    cc = nc
-                    continue
-                elif field[nr][nc] == '*':
-                    field[nr][nc] = '.'
+# for TC in range(int(input())):
+#     h, w = map(int, input().split())
+#     field = [ list(input()) for _ in range(h)]
+#     n = int(input())
+#     given = input()
+#     tank = [0, '>', '<', 'v', '^']
+#     for i in range(h):
+#         for j in range(w):
+#             if field[i][j] in tank:
+#                 tr = i
+#                 tc = j
+#     field[tr][tc] = tank.index(field[tr][tc])
+#     dr = [0, 0, 0, 1, -1]
+#     dc = [0, 1, -1, 0, 0]
+#     for o in given:
+#         if o == 'S':
+#             cr = tr
+#             cc = tc
+#             d = field[tr][tc]
+#             while True:
+#                 nr = cr+dr[d]
+#                 nc = cc+dc[d]
+#                 if nr < 0 or nr >= h or nc < 0 or nc >= w: break
+#                 if field[nr][nc] == '-' or field[nr][nc] == '.':
+#                     cr = nr
+#                     cc = nc
+#                     continue
+#                 elif field[nr][nc] == '*':
+#                     field[nr][nc] = '.'
+#                     break
+#                 elif field[nr][nc] == '#':
+#                     break
+#         elif o == 'R':
+#             field[tr][tc] = 1
+#             if tc+dc[1] < w and field[tr+dr[1]][tc+dc[1]] == '.':
+#                 field[tr+dr[1]][tc+dc[1]] = 1
+#                 field[tr][tc] = '.'
+#                 tr = tr+dr[1]
+#                 tc = tc+dc[1]
+#         elif o == 'L':
+#             field[tr][tc] = 2
+#             if 0 <= tc+dc[2] and field[tr+dr[2]][tc+dc[2]] == '.':
+#                 field[tr+dr[2]][tc+dc[2]] = 2
+#                 field[tr][tc] = '.'
+#                 tr = tr+dr[2]
+#                 tc = tc+dc[2]
+#         elif o == 'D':
+#             field[tr][tc] = 3
+#             if tr+dr[3] < h and field[tr+dr[3]][tc+dc[3]] == '.':
+#                 field[tr+dr[3]][tc+dc[3]] = 3
+#                 field[tr][tc] = '.'
+#                 tr = tr+dr[3]
+#                 tc = tc+dc[3]
+#         elif o == 'U':
+#             field[tr][tc] = 4
+#             if 0 <= tr+dr[4] and field[tr+dr[4]][tc+dc[4]] == '.':
+#                 field[tr+dr[4]][tc+dc[4]] = 4
+#                 field[tr][tc] = '.'
+#                 tr = tr+dr[4]
+#                 tc = tc+dc[4]
+#     field[tr][tc] = tank[field[tr][tc]]
+#     print('#{} '.format(TC+1), end='')
+#     for i in range(h):
+#         print('{}'.format(''.join(field[i])))
+
+# 1860
+
+# for tc in range(int(input())):
+#     n, m, k = map(int, input().split())
+#     c = list(map(int, input().split()))
+#     t = [0] * (max(c)+1)
+#     for s in c:
+#         t[s] += 1
+#     b = 0
+#     result = 'Possible'
+#     for i in range(len(t)):
+#         if i > 0 and i % m == 0:
+#             b += k
+#         b -= t[i]
+#         if b < 0:
+#             result = 'Impossible'
+#             break
+#     print('#{} {}'.format(tc+1, result))
+
+# 4831
+
+for tc in range(int(input())):
+    k, n, m = map(int, input().split())
+    s = list(map(int, input().split()))
+    st = list()
+    for i in s:
+        if n-k <= i:
+            st.append(i)
+            while st:
+                a = st[-1]
+                if a-k <= 0:
+                    st.insert(0, 0)
                     break
-                elif field[nr][nc] == '#':
-                    break
-        elif o == 'R':
-            field[tr][tc] = 1
-            if tc+dc[1] < w and field[tr+dr[1]][tc+dc[1]] == '.':
-                field[tr+dr[1]][tc+dc[1]] = 1
-                field[tr][tc] = '.'
-                tr = tr+dr[1]
-                tc = tc+dc[1]
-        elif o == 'L':
-            field[tr][tc] = 2
-            if 0 <= tc+dc[2] and field[tr+dr[2]][tc+dc[2]] == '.':
-                field[tr+dr[2]][tc+dc[2]] = 2
-                field[tr][tc] = '.'
-                tr = tr+dr[2]
-                tc = tc+dc[2]
-        elif o == 'D':
-            field[tr][tc] = 3
-            if tr+dr[3] < h and field[tr+dr[3]][tc+dc[3]] == '.':
-                field[tr+dr[3]][tc+dc[3]] = 3
-                field[tr][tc] = '.'
-                tr = tr+dr[3]
-                tc = tc+dc[3]
-        elif o == 'U':
-            field[tr][tc] = 4
-            if 0 <= tr+dr[4] and field[tr+dr[4]][tc+dc[4]] == '.':
-                field[tr+dr[4]][tc+dc[4]] = 4
-                field[tr][tc] = '.'
-                tr = tr+dr[4]
-                tc = tc+dc[4]
-    field[tr][tc] = tank[field[tr][tc]]
-    print('#{} '.format(TC+1), end='')
-    for i in range(h):
-        print('{}'.format(''.join(field[i])))
+                temp = []
+                for j in range(s.index(a)-1, -1, -1):
+                    if a-k > s[j]:
+                        temp = s[j+1:]
+                        if temp[0] == a: break
+                        else:
+                            st.append(temp[0])
+                            temp = []
+                            a = st[-1]
+                if len(st) == 1: st.pop()
+        if st != [] and st[0] == 0: break
+        elif st == []: continue
+    if len(st) == 0:
+        print('#{} {}'.format(tc+1, 0))
+    else:
+        print('#{} {}'.format(tc+1, len(st)-1))
