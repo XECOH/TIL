@@ -397,13 +397,21 @@
 #     print('#{} {}'.format(tc, ''.join(words)))
 
 # 5215
-#
-# from itertools import permutations
-#
+
 # for tc in range(int(input())):
 #     n, l = map(int, input().split())
-#     ing = list(list(map(int, input().split())) for _ in range(n))
-#     maxV = 0
+#     ing = [list(map(int, input().split())) for _ in range(n)]
+#     maxT = 0
+#     for i in range(1<<n):
+#         cal = 0
+#         T = 0
+#         for j in range(n):
+#             if i&(1<<j):
+#                 cal += ing[j][1]
+#                 T += ing[j][0]
+#             if maxT < T and cal <= l:
+#                 maxT = T
+#     print('#{} {}'.format(tc+1, maxT))
 
 # 5601
 
@@ -676,8 +684,19 @@
 
 # for tc in range(int(input())):
 #     n = int(input())
-#     day = list(int(input()) for _  in range(n))
-
+#     port = list(int(input()) for _ in range(n))
+#     d = [port[1]-port[0]]
+#     for i in range(2, n):
+#         j = len(d)
+#         k = 0
+#         while k < j:
+#             if (port[i]-port[0]) % d[k] == 0:
+#                 break
+#             else:
+#                 k += 1
+#         if k == j:
+#             d.append(port[i]-port[0])
+#     print('#{} {}'.format(tc+1, len(d)))
 
 # 4789
 
@@ -699,13 +718,27 @@
 # for tc in range(int(input())):
 #     n = int(input())
 #     sen = list(input().split())
-#     upper= list(chr(i) for i in range(65, 91))
-#     lower = list(chr(i) for i in range(97, 123))
+#     u = [chr(i) for i in range(65, 91)]
+#     nums = '1234567890'
 #     ans = [0] * n
-#     for i in range(n):
-#         cnt = 0
-#         for word in sen:
-#             for j in range(len(word)):
+#     cnt = 0
+#     i = 0
+#     for s in sen:
+#         ucnt = 0
+#         for j in range(len(s)):
+#             if s[j] in u:
+#                 ucnt += 1
+#             if s[j] in nums:
+#                 ucnt = 0
+#                 break
+#         if ucnt == 1:
+#             cnt += 1
+#         if s[-1] == '!' or s[-1] == '.' or s[-1] == '?':
+#             ans[i] += cnt
+#             i += 1
+#             cnt = 0
+#     print('#{} {}'.format(tc+1, ' '.join(map(str, ans))))
+
 
 # 2806
 
@@ -836,31 +869,109 @@
 
 # 4831
 
+# for tc in range(int(input())):
+#     k, n, m = map(int, input().split())
+#     s = list(map(int, input().split()))
+#     st = list()
+#     for i in s:
+#         if n-k <= i:
+#             st.append(i)
+#             while st:
+#                 a = st[-1]
+#                 if a-k <= 0:
+#                     st.insert(0, 0)
+#                     break
+#                 temp = []
+#                 for j in range(s.index(a)-1, -1, -1):
+#                     if a-k > s[j]:
+#                         temp = s[j+1:]
+#                         if temp[0] == a: break
+#                         else:
+#                             st.append(temp[0])
+#                             temp = []
+#                             a = st[-1]
+#                 if len(st) == 1: st.pop()
+#         if st != [] and st[0] == 0: break
+#         elif st == []: continue
+#     if len(st) == 0:
+#         print('#{} {}'.format(tc+1, 0))
+#     else:
+#         print('#{} {}'.format(tc+1, len(st)-1))
+
+# 1244
+
+# for tc in range(int(input())):
+#     arr = list(map(str, input().split()))
+#     nums = [int(arr[0][i]) for i in range(len(arr[0]))]
+#     print(nums)
+
+# 3304
+
+# for tc in range(int(input())):
+#     str1, str2 = input().split()
+#     st = []
+#     for i in range(len(str1)):
+#         for j in range(len(str2)):
+#             if str1[i] == str2[j]:
+#                 st.append(str1[i])
+#                 break
+#             elif str1[i] not in str2:
+#                 break
+#     print('#{} {}'.format(tc+1, len(st)))
+
+# 5642
+
+# for tc in range(int(input())):
+#     n = int(input())
+#     nums = list(map(int, input().split()))
+#     st = []
+#     for i in range(n):
+#         st.append(nums[i])
+#         for j in range(1, n):
+
+# 3307
+
+# for tc in range(int(input())):
+#     n = int(input())
+#     nums = list(map(int, input().split()))
+#     maxl = 0
+#     for i in range(n):
+#         if nums[i] == max(nums) : continue
+#         st = []
+#         st.append(nums[i])
+#         j = nums.index(st[-1]) + 1
+#         while j < n:
+#             if st[-1] <= nums[j]:
+#                 st.append(nums[j])
+#                 j = nums.index(st[-1]) + 1
+#             else:
+#                 j += 1
+#         if maxl < len(st):
+#             maxl = len(st)
+#     print('#{} {}'.format(tc+1, maxl))
+
+# 6190
+
+def monotoneincreasing(x):
+    x = str(x)
+    i = len(x)
+    while i > 1:
+        if int(x[i-1]) >= int(x[i-2]):
+            i -= 1
+        else:
+            return False
+    return True
+
 for tc in range(int(input())):
-    k, n, m = map(int, input().split())
-    s = list(map(int, input().split()))
-    st = list()
-    for i in s:
-        if n-k <= i:
-            st.append(i)
-            while st:
-                a = st[-1]
-                if a-k <= 0:
-                    st.insert(0, 0)
-                    break
-                temp = []
-                for j in range(s.index(a)-1, -1, -1):
-                    if a-k > s[j]:
-                        temp = s[j+1:]
-                        if temp[0] == a: break
-                        else:
-                            st.append(temp[0])
-                            temp = []
-                            a = st[-1]
-                if len(st) == 1: st.pop()
-        if st != [] and st[0] == 0: break
-        elif st == []: continue
-    if len(st) == 0:
-        print('#{} {}'.format(tc+1, 0))
-    else:
-        print('#{} {}'.format(tc+1, len(st)-1))
+    n = int(input())
+    nums = list(map(int, input().split()))
+    maxV = -1
+    for i in range(n):
+        for j in range(i+1, n):
+            num = nums[i]*nums[j]
+            if num >= 10 and monotoneincreasing(num) and num > maxV:
+                maxV = num
+            elif num < 10:
+                maxV = num
+    print('#{} {}'.format(tc+1, maxV))
+
