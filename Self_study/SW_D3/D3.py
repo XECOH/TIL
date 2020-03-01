@@ -742,28 +742,19 @@
 
 # 2806
 
-# def check(j):
-#     global cnt
-#     if promising() ==:
-#
-#     elif c == n:
-#         cnt += 1
-#         return
-#     else:
-#
-#
-#
-# def promising(j):
-#     for i in range():
-#
-#
-#
-# for tc in range(int(input())):
-#     n = int(input())
-#     c = [0] * (n+1)
-#     cnt = 0
-#     check(1)
-#     print('#{} {}'.format(tc+1, cnt))
+def queen(x):
+    global cnt
+
+
+def promissing(x):
+
+
+for tc in range(int(input())):
+    n = int(input())
+    cols = []
+    cnt = 0
+    queen(0)
+    print('#{} {}'.format(tc+1, cnt))
 
 # 6485
 
@@ -952,26 +943,26 @@
 
 # 6190
 
-def monotoneincreasing(x):
-    x = str(x)
-    i = len(x)
-    while i > 1:
-        if int(x[i-1]) >= int(x[i-2]):
-            i -= 1
-        else:
-            return False
-    return True
-
-for tc in range(int(input())):
-    n = int(input())
-    nums = list(map(int, input().split()))
-    maxV = -1
-    for i in range(n):
-        for j in range(i+1, n):
-            num = nums[i]*nums[j]
-            if num >= 10 and monotoneincreasing(num) and num > maxV:
-                maxV = num
-            elif num < 10:
-                maxV = num
-    print('#{} {}'.format(tc+1, maxV))
+# def monotoneincreasing(x):
+#     x = str(x)
+#     i = len(x)
+#     while i > 1:
+#         if int(x[i-1]) >= int(x[i-2]):
+#             i -= 1
+#         else:
+#             return False
+#     return True
+#
+# for tc in range(int(input())):
+#     n = int(input())
+#     nums = list(map(int, input().split()))
+#     maxV = -1
+#     for i in range(n):
+#         for j in range(i+1, n):
+#             num = nums[i]*nums[j]
+#             if num >= 10 and monotoneincreasing(num) and num > maxV:
+#                 maxV = num
+#             elif num < 10:
+#                 maxV = num
+#     print('#{} {}'.format(tc+1, maxV))
 
