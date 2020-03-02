@@ -633,8 +633,20 @@
 
 # for tc in range(int(input())):
 #     n = int(input())
-#     nums = list(map(int, input().split()) for _ in range(n//20))
-
+#     nums = ''
+#     while True:
+#         nums += ''.join(map(str, input().split()))
+#         if len(nums) == n:
+#             break
+#     t = 0
+#     result = -1
+#     while True:
+#         if str(t) not in nums:
+#             result = t
+#             break
+#         else:
+#             t += 1
+#     print('#{} {}'.format(tc+1, result))
 
 # 2817
 
@@ -742,19 +754,19 @@
 
 # 2806
 
-def queen(x):
-    global cnt
-
-
-def promissing(x):
-
-
-for tc in range(int(input())):
-    n = int(input())
-    cols = []
-    cnt = 0
-    queen(0)
-    print('#{} {}'.format(tc+1, cnt))
+# def queen(x):
+#     global cnt
+#
+#
+# def promissing(x):
+#
+#
+# for tc in range(int(input())):
+#     n = int(input())
+#     cols = []
+#     cnt = 0
+#     queen(0)
+#     print('#{} {}'.format(tc+1, cnt))
 
 # 6485
 
@@ -915,10 +927,20 @@ for tc in range(int(input())):
 # for tc in range(int(input())):
 #     n = int(input())
 #     nums = list(map(int, input().split()))
-#     st = []
-#     for i in range(n):
-#         st.append(nums[i])
-#         for j in range(1, n):
+#     maxS = max(nums)
+#     sum1 = max(nums)
+#     sum2 = max(nums)
+#     s = nums.index(max(nums))
+#     for i in range(n-1, -1, -1):
+#         if i < s:
+#             sum1 += nums[i]
+#             if sum1 > maxS:
+#                 maxS = sum1
+#         elif i > s:
+#             sum2 += nums[-(i-s)]
+#             if sum2 > maxS:
+#                 maxS = sum2
+#     print('#{} {}'.format(tc+1, maxS))
 
 # 3307
 
@@ -966,3 +988,24 @@ for tc in range(int(input())):
 #                 maxV = num
 #     print('#{} {}'.format(tc+1, maxV))
 
+# 6057
+
+# for tc in range(int(input())):
+#     n, m = map(int, input().split())
+#     nodes = [list(map(int, input().split())) for _ in range(m)]
+#     g = [[0 for _ in range(n+1)] for _ in range(n+1)]
+#     for i in range(m):
+#         g[nodes[i][0]][nodes[i][1]] = 1
+
+
+# 5642
+
+# def f(s, w, e, t):
+#     global maxS
+#
+#
+# for tc in range(int(input())):
+#     n = int(input())
+#     nums = list(map(int, input().split()))
+#     maxS = 0
+#     f(0, 1, 5, 0)

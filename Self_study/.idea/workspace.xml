@@ -34,7 +34,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.D4">
+  <component name="RunManager" selected="Python.A형대비">
     <configuration name="A형대비" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Self_study" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -100,8 +100,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.D4" />
         <item itemvalue="Python.A형대비" />
+        <item itemvalue="Python.D4" />
         <item itemvalue="Python.SW_D2" />
       </list>
     </recent_temporary>
@@ -120,41 +120,45 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1515" height="261" key="GridCell.Tab.0.bottom" timestamp="1582868484986">
+    <state width="1515" height="260" key="GridCell.Tab.0.bottom" timestamp="1583133802201">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582868484986" />
-    <state width="1515" height="261" key="GridCell.Tab.0.center" timestamp="1582868484984">
+    <state width="1515" height="260" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583133802201" />
+    <state width="1515" height="260" key="GridCell.Tab.0.center" timestamp="1583133802200">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1582868484984" />
-    <state width="1515" height="261" key="GridCell.Tab.0.left" timestamp="1582868484984">
+    <state width="1515" height="260" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1583133802200" />
+    <state width="1515" height="260" key="GridCell.Tab.0.left" timestamp="1583133802200">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1582868484984" />
-    <state width="1515" height="261" key="GridCell.Tab.0.right" timestamp="1582868484986">
+    <state width="1515" height="260" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1583133802200" />
+    <state width="1515" height="260" key="GridCell.Tab.0.right" timestamp="1583133802201">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1582868484986" />
-    <state width="1515" height="261" key="GridCell.Tab.1.bottom" timestamp="1582868484986">
+    <state width="1515" height="260" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583133802201" />
+    <state width="1515" height="260" key="GridCell.Tab.1.bottom" timestamp="1583133802203">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1582868484986" />
-    <state width="1515" height="261" key="GridCell.Tab.1.center" timestamp="1582868484986">
+    <state width="1515" height="260" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583133802203" />
+    <state width="1515" height="260" key="GridCell.Tab.1.center" timestamp="1583133802203">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1582868484986" />
-    <state width="1515" height="261" key="GridCell.Tab.1.left" timestamp="1582868484986">
+    <state width="1515" height="260" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1583133802203" />
+    <state width="1515" height="260" key="GridCell.Tab.1.left" timestamp="1583133802202">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1582868484986" />
-    <state width="1515" height="261" key="GridCell.Tab.1.right" timestamp="1582868484986">
+    <state width="1515" height="260" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1583133802202" />
+    <state width="1515" height="260" key="GridCell.Tab.1.right" timestamp="1583133802203">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1515" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1582868484986" />
-    <state x="471" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1582871797057">
+    <state width="1515" height="260" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1583133802203" />
+    <state x="471" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1583134021227">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="471" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1582871797057" />
+    <state x="471" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1583134021227" />
+    <state x="815" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1583122614070">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="815" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1583122614070" />
   </component>
 </project>
