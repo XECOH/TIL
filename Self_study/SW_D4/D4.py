@@ -43,3 +43,63 @@
 #     print('#{} {} '.format(tc+1, len(ans)), end = '')
 #     for i in range(len(ans)):
 #         print('{} {}'.format(ans[i][0], ans[i][1]), end= ' ')
+
+# 1218
+
+# for tc in range(1, 11):
+#     l = int(input())
+#     data = input()
+#     st = []
+#     result = 1
+#     for i in data:
+#         if i == '(' or i == '<' or i == '{' or i == '[':
+#             st.append(i)
+#         elif i == ')':
+#             if st[-1] == '(':
+#                 st.pop()
+#             else:
+#                 result = 0
+#                 break
+#         elif i == ']':
+#             if st[-1] == '[':
+#                 st.pop()
+#             else:
+#                 result = 0
+#                 break
+#         elif i == '>':
+#             if st[-1] == '<':
+#                 st.pop()
+#             else:
+#                 result = 0
+#                 break
+#         elif i == '}':
+#             if st[-1] == '{':
+#                 st.pop()
+#             else:
+#                 result = 0
+#                 break
+#     print('#{} {}'.format(tc, result))
+
+# 1223
+
+
+
+for tc in range(1, 2):
+    l = int(input())
+    data= list(input())
+    st = []
+    op = ['+', '*']
+    ndata = []
+    for i in data:
+        if i not in op:
+            ndata.append(int(i))
+        elif i in op:
+            if st == []:
+                st.append(i)
+            else:
+                ndata.append(st.pop())
+                st.append(i)
+    while st:
+        ndata.append(st.pop())
+    print(ndata)
+
