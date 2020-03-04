@@ -1043,3 +1043,27 @@
 #     nums = list(map(int, input().split()))
 #     maxS = 0
 #     f(0, 1, 5, 0)
+
+# 2814
+
+# def f(st,s):
+#     global maxL
+#     adj[st] = 1
+#     for i in range(n+1):
+#         if adj[i] == 0 and graph[st][i] == 1:
+#             f(i, s+1)
+#             adj[i] = 0
+#     if s > maxL:
+#         maxL = s
+#
+# for tc in range(int(input())):
+#     n, m = map(int, input().split())
+#     graph = [[0 for _ in range(n+1)] for _ in range(n+1)]
+#     for i in range(m):
+#         a, b = map(int, input().split())
+#         graph[a][b] , graph[b][a] = 1, 1
+#     maxL = 1
+#     for i in range(1, n+1):
+#         adj = [0] * (n+1)
+#         f(i, 1)
+#     print('#{} {}'.format(tc+1, maxL))
