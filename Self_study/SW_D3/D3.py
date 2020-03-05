@@ -788,19 +788,33 @@
 
 # 2806
 
-# def queen(x):
-#     global cnt
-#
-#
-# def promissing(x):
-#
-#
-# for tc in range(int(input())):
-#     n = int(input())
-#     cols = []
-#     cnt = 0
-#     queen(0)
-#     print('#{} {}'.format(tc+1, cnt))
+def queen(x):
+    global cnt
+    if len(cols) == n:
+        cnt += 1
+    else:
+        promissing(x)
+
+def promissing(x):
+    for i in range(n):
+        if i not in cols:
+            j = len(cols)
+            while j > 0:
+                if cols[-j] == i-j or cols[-j] == i+j: break
+                else:
+                    j -= 1
+            if j == 0:
+                cols.append(i)
+                queen(i)
+                cols.remove(i)
+
+for tc in range(int(input())):
+    n = int(input())
+    cnt = 0
+    for i in range(n):
+        cols = [i]
+        queen(i)
+    print('#{} {}'.format(tc+1, cnt))
 
 # 6485
 
@@ -1067,3 +1081,24 @@
 #         adj = [0] * (n+1)
 #         f(i, 1)
 #     print('#{} {}'.format(tc+1, maxL))
+
+# 1491
+
+# for tc in range(int(input())):
+#     n, a, b = map(int, input().split())
+#     c = int(n**0.5)
+#     ans = 1000000000000000
+#     for i in range(c, n):
+#         for j in range(1, c+2):
+#             if i*j <= n:
+#                 res = a*abs(i-j)+b*(n-(i*j))
+#                 if res < ans:
+#                     ans = res
+#             else:
+#                 break
+#     print('#{} {}'.format(tc+1, ans))
+
+# 3307
+
+# 4579
+

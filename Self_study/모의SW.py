@@ -19,7 +19,5 @@ for tc in range(int(input())):
     n = int(input())
     table = [[0]*(n+1)]+[[0]+list(map(int, input().split())) for _ in range(n)]
     diff = 1000000000
-    for i in range(1, n+1):
-        v = [0] * (n+1)
-        f(i)
     print('#{} {}'.format(tc+1, diff))
+
