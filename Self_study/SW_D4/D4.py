@@ -107,9 +107,15 @@ for tc in range(int(input())):
     iron = input()
     cnt = 0
     st = []
-    for i in range(len(iron)-1):
-        if iron[i] =='(' and iron[i+1] == ')':
-            cnt += 2*(len(st))
+    i = 0
+    while i < len(iron):
+        if iron[i] =='(' and iron[i+1] == ')' and st != []:
+            cnt += len(st)
+            i += 1
         elif iron[i] =='(' and iron[i+1] != ')':
             st.append(iron[i])
-        elif iron[i] == ')':
+            cnt += 1
+        elif iron[i] == ')' and st != []:
+            st.pop()
+        i += 1
+    print('#{} {}'.format(tc+1, cnt))
