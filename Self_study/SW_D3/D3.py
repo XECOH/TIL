@@ -711,10 +711,25 @@
 #     print('#{} {}'.format(tc+1, result))
 
 # 3304
-#
-# for tc in range(int(input())):
-#     s1, s2 = input().split()
-#
+
+for tc in range(int(input())):
+    s1, s2 = input().split()
+    lcs = ''
+    j = 0
+    stored = 0
+    for i in range(len(s1)):
+        while j < len(s2):
+            if s1[i] == s2[j]:
+                lcs += s1[i]
+                stored = j+1
+                break
+            else:
+                j += 1
+        if j == len(s2):
+            j = stored
+        if stored >= len(s2): break
+    print('#{} {}'.format(tc+1, len(lcs)))
+
 
 # 3233
 
@@ -1143,10 +1158,10 @@
 
 # 5293
 
-def res():
-
-
-for tc in range(int(input())):
-    bi = ['00', '01', '10', '11']
-    abcd = list(map(int, input().split()))
-    print('#{} {}'.format(tc+1, ))
+# def res():
+#
+#
+# for tc in range(int(input())):
+#     bi = ['00', '01', '10', '11']
+#     abcd = list(map(int, input().split()))
+#     print('#{} {}'.format(tc+1, ))

@@ -103,19 +103,34 @@
 
 # 5432
 
-for tc in range(int(input())):
-    iron = input()
-    cnt = 0
-    st = []
-    i = 0
-    while i < len(iron):
-        if iron[i] =='(' and iron[i+1] == ')' and st != []:
-            cnt += len(st)
-            i += 1
-        elif iron[i] =='(' and iron[i+1] != ')':
-            st.append(iron[i])
-            cnt += 1
-        elif iron[i] == ')' and st != []:
-            st.pop()
-        i += 1
-    print('#{} {}'.format(tc+1, cnt))
+# for tc in range(int(input())):
+    # iron = input()
+    # cnt = 0
+    # st = []
+    # i = 0
+    # while i < len(iron):
+    #     if iron[i] =='(' and iron[i+1] == ')' and st != []:
+    #         cnt += len(st)
+    #         i += 1
+    #     elif iron[i] =='(' and iron[i+1] != ')':
+    #         st.append(iron[i])
+    #         cnt += 1
+    #     elif iron[i] == ')' and st != []:
+    #         st.pop()
+    #     i += 1
+    # print('#{} {}'.format(tc+1, cnt))
+
+# 7701
+
+# for tc in range(int(input())):
+#     n = int(input())
+#     names = set()
+#     for i in range(n):
+#         names.add(input())
+#     names = list(names)
+#     names.sort(key = lambda x: (len(x), x))
+#     print('#{}'.format(tc+1))
+#     for name in names:
+#         print('{}'.format(name))
+
+#
