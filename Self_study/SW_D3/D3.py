@@ -788,33 +788,33 @@
 
 # 2806
 
-def queen(x):
-    global cnt
-    if len(cols) == n:
-        cnt += 1
-    else:
-        promissing(x)
-
-def promissing(x):
-    for i in range(n):
-        if i not in cols:
-            j = len(cols)
-            while j > 0:
-                if cols[-j] == i-j or cols[-j] == i+j: break
-                else:
-                    j -= 1
-            if j == 0:
-                cols.append(i)
-                queen(i)
-                cols.remove(i)
-
-for tc in range(int(input())):
-    n = int(input())
-    cnt = 0
-    for i in range(n):
-        cols = [i]
-        queen(i)
-    print('#{} {}'.format(tc+1, cnt))
+# def queen(x):
+#     global cnt
+#     if len(cols) == n:
+#         cnt += 1
+#     else:
+#         promissing(x)
+#
+# def promissing(x):
+#     for i in range(n):
+#         if i not in cols:
+#             j = len(cols)
+#             while j > 0:
+#                 if cols[-j] == i-j or cols[-j] == i+j: break
+#                 else:
+#                     j -= 1
+#             if j == 0:
+#                 cols.append(i)
+#                 queen(i)
+#                 cols.remove(i)
+#
+# for tc in range(int(input())):
+#     n = int(input())
+#     cnt = 0
+#     for i in range(n):
+#         cols = [i]
+#         queen(i)
+#     print('#{} {}'.format(tc+1, cnt))
 
 # 6485
 
@@ -1040,23 +1040,34 @@ for tc in range(int(input())):
 
 # for tc in range(int(input())):
 #     n, m = map(int, input().split())
-#     nodes = [list(map(int, input().split())) for _ in range(m)]
 #     g = [[0 for _ in range(n+1)] for _ in range(n+1)]
 #     for i in range(m):
-#         g[nodes[i][0]][nodes[i][1]] = 1
+#         nod1, nod2 = map(int, input().split())
+#         g[nod1][nod2] = 1
+#         g[nod2][nod1] = 1
+#     cnt = 0
+#     for i in range(1, n+1):
+#         for j in range(1, n+1):
+#             if g[i][j] == 1 and i < j:
+#                 for k in range(1, n+1):
+#                     if g[j][k] == 1 and j < k and g[k][i] == 1:
+#                         cnt += 1
+#     print('#{} {}'.format(tc+1, cnt))
 
 
 # 5642
 
-# def f(s, w, e, t):
-#     global maxS
-#
-#
 # for tc in range(int(input())):
 #     n = int(input())
 #     nums = list(map(int, input().split()))
-#     maxS = 0
-#     f(0, 1, 5, 0)
+#     maxS = -100000000
+#     for i in range(n):
+#         sum = 0
+#         for j in range(i, n):
+#             sum += nums[j]
+#             if sum > maxS:
+#                 maxS = sum
+#     print('#{} {}'.format(tc+1, maxS))
 
 # 2814
 
@@ -1102,3 +1113,40 @@ for tc in range(int(input())):
 
 # 4579
 
+# for tc in range(int(input())):
+#     word = input()
+#     n = len(word)
+#     result = 'Exist'
+#     for i in range(n//2):
+#         if word[i] == '*' or word[-1-i] == '*':
+#             break
+#         if word[i] != word[-1-i]:
+#             result = 'Not exist'
+#             break
+#     print('#{} {}'.format(tc+1, result))
+
+# 3032
+
+# for tc in range(int(input())):
+    # xy = list(map(int, input().split()))
+    # result = [-1, '']
+    # for i in range(1, (max(xy)-min(xy))+1):
+    #     if max(xy) > min(xy)*i and max(xy) - (min(xy)*i) == 1:
+    #         result[xy.index(max(xy))] = 1
+    #         result[xy.index(min(xy))] = -i
+    #         break
+    #     elif max(xy) < min(xy)*i and (min(xy)*i - max(xy)) == 1:
+    #         result[xy.index(max(xy))] = -1
+    #         result[xy.index(min(xy))] = i
+    #         break
+    # print('#{} {}'.format(tc+1, ' '.join(map(str, result))))
+
+# 5293
+
+def res():
+
+
+for tc in range(int(input())):
+    bi = ['00', '01', '10', '11']
+    abcd = list(map(int, input().split()))
+    print('#{} {}'.format(tc+1, ))

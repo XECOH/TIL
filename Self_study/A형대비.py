@@ -324,3 +324,33 @@ f(n, i, j)에서 s[n]에 격자판 i, j의 숫자를 복사
 #         for j in range(4):
 #             f(i, j, 0, '')
 #     print('#{} {}'.format(tc+1, len(t)))
+
+# 3752
+
+# def f(x, s):
+#     if memo[x][s] != 0:
+#         return
+#     memo[x][s] = 1
+#     if x==n:
+#         po.add(s)
+#         return
+#     else:
+#         f(x+1, s+p[x])
+#         f(x+1, s)
+# for tc in range(int(input())):
+#     n = int(input())
+#     p = list(map(int, input().split()))
+#     memo = [[0]*(10001) for _ in range(n+1)]
+#     po = set()
+#     f(0, 0)
+#     print('#{} {}'.format(tc+1, len(po)))
+
+# 갓동엽 코드
+# for tc in range(int(input())):
+#     n = int(input())
+#     p = list(map(int, input().split()))
+#     po = {0}
+#     for num in p:
+#         for sum in list(po):
+#             po.add(num+sum)
+#     print('#{} {}'.format(tc+1, len(po))

@@ -82,24 +82,34 @@
 
 # 1223
 
+# for tc in range(1, 2):
+#     l = int(input())
+#     data= list(input())
+#     st = []
+#     op = ['+', '*']
+#     ndata = []
+#     for i in data:
+#         if i not in op:
+#             ndata.append(int(i))
+#         elif i in op:
+#             if st == []:
+#                 st.append(i)
+#             else:
+#                 ndata.append(st.pop())
+#                 st.append(i)
+#     while st:
+#         ndata.append(st.pop())
+#     print(ndata)
 
+# 5432
 
-for tc in range(1, 2):
-    l = int(input())
-    data= list(input())
+for tc in range(int(input())):
+    iron = input()
+    cnt = 0
     st = []
-    op = ['+', '*']
-    ndata = []
-    for i in data:
-        if i not in op:
-            ndata.append(int(i))
-        elif i in op:
-            if st == []:
-                st.append(i)
-            else:
-                ndata.append(st.pop())
-                st.append(i)
-    while st:
-        ndata.append(st.pop())
-    print(ndata)
-
+    for i in range(len(iron)-1):
+        if iron[i] =='(' and iron[i+1] == ')':
+            cnt += 2*(len(st))
+        elif iron[i] =='(' and iron[i+1] != ')':
+            st.append(iron[i])
+        elif iron[i] == ')':
