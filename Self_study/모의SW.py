@@ -15,9 +15,27 @@
 
 # 4012
 
-for tc in range(int(input())):
-    n = int(input())
-    table = [[0]*(n+1)]+[[0]+list(map(int, input().split())) for _ in range(n)]
-    diff = 1000000000
-    print('#{} {}'.format(tc+1, diff))
+# for tc in range(int(input())):
+#     n = int(input())
+#     table = [[0]*(n+1)]+[[0]+list(map(int, input().split())) for _ in range(n)]
+#     diff = 1000000000
+#     print('#{} {}'.format(tc+1, diff))
 
+# 2105
+
+# for tc in range(int(input())):
+#     n = int(input())
+#     region = [list(map(int, input().split())) for _ in range(n)]
+#     maxD = -1
+#     di = [1, 1, -1, -1]
+#     dj = [1, -1, -1, 1]
+#     for i in range(n):
+#         for j in range(n):
+#             for k in range(4):
+
+# 5653
+
+for tc in range(int(input())):
+    n, m, k = map(int, input().split())
+    grid = [list(map(int, input().split())) for _ in range(n)]
+    

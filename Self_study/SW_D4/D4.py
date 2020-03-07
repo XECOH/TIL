@@ -133,4 +133,9 @@
 #     for name in names:
 #         print('{}'.format(name))
 
-#
+# 4672
+
+for tc in range(int(input())):
+    word = input()
+
+    print('#{} {}'.format(tc+1, cnt))

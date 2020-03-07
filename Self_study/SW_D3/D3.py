@@ -712,23 +712,23 @@
 
 # 3304
 
-for tc in range(int(input())):
-    s1, s2 = input().split()
-    lcs = ''
-    j = 0
-    stored = 0
-    for i in range(len(s1)):
-        while j < len(s2):
-            if s1[i] == s2[j]:
-                lcs += s1[i]
-                stored = j+1
-                break
-            else:
-                j += 1
-        if j == len(s2):
-            j = stored
-        if stored >= len(s2): break
-    print('#{} {}'.format(tc+1, len(lcs)))
+# for tc in range(int(input())):
+#     s1, s2 = input().split()
+#     lcs = ''
+#     j = 0
+#     stored = 0
+#     for i in range(len(s1)):
+#         while j < len(s2):
+#             if s1[i] == s2[j]:
+#                 lcs += s1[i]
+#                 stored = j+1
+#                 break
+#             else:
+#                 j += 1
+#         if j == len(s2):
+#             j = stored
+#         if stored >= len(s2): break
+#     print('#{} {}'.format(tc+1, len(lcs)))
 
 
 # 3233
@@ -1143,18 +1143,24 @@ for tc in range(int(input())):
 # 3032
 
 # for tc in range(int(input())):
-    # xy = list(map(int, input().split()))
-    # result = [-1, '']
-    # for i in range(1, (max(xy)-min(xy))+1):
-    #     if max(xy) > min(xy)*i and max(xy) - (min(xy)*i) == 1:
-    #         result[xy.index(max(xy))] = 1
-    #         result[xy.index(min(xy))] = -i
-    #         break
-    #     elif max(xy) < min(xy)*i and (min(xy)*i - max(xy)) == 1:
-    #         result[xy.index(max(xy))] = -1
-    #         result[xy.index(min(xy))] = i
-    #         break
-    # print('#{} {}'.format(tc+1, ' '.join(map(str, result))))
+#     a, b = map(int, input().split())
+#     check = 0
+#     if b > a:
+#         a, b = b, a
+#         check = 1
+#     eea = [[1, 0, a, 0], [0, 1, b, a//b]]
+#     i = 1
+#     while eea[i][2] != 1:
+#         i += 1
+#         eea.append([0, 0, 0, 0])
+#         eea[i][0] = eea[i-2][0]-(eea[i-1][0]*eea[i-1][3])
+#         eea[i][1] = eea[i-2][1]-(eea[i-1][1]*eea[i-1][3])
+#         eea[i][2] = eea[i-2][2] % eea[i-1][2]
+#         eea[i][3] = eea[i-1][2] // eea[i][2]
+#     if check == 0:
+#         print('#{} {} {}'.format(tc+1, eea[i][0], eea[i][1]))
+#     else:
+#         print('#{} {} {}'.format(tc+1, eea[i][1], eea[i][0]))
 
 # 5293
 
