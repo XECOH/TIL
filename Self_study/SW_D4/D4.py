@@ -200,3 +200,116 @@
 #                 break
 #             j += 1
 #     print('#{} {}'.format(tc, cnt.index(max(cnt))+1))
+
+# 1223
+
+def icp(t): #스택에 넣을 때
+    if t =='*':
+        return 2
+    else:
+        return 1
+
+def isp(t): # 스택안에
+    if t == '*':
+        return 2
+    else:
+        return 1
+
+def operation(arr):
+    op = ['*', '+']
+    st = []
+    for c in arr:
+        if c not in op:
+            st. append(c)
+        else:
+            if c == '*':
+                op1= st.pop()
+                op2= st.pop()
+                st.append(op1*op2)
+            else:
+                op1 = st.pop()
+                op2 = st.pop()
+                st.append(op1+op2)
+    return st[0]
+
+for tc in range(1, 2):
+    l = int(input())
+    c = list(map(str, input()))
+    operator = ['*', '+']
+    postfix = []
+    st = []
+    for i in c:
+        if i not in operator:
+            postfix.append(int(i))
+        else:
+            if st == []:
+                st.append(i)
+            else:
+                top = st[-1]
+                if icp(i) > isp(top):
+                    st.append(i)
+                elif icp(i) == isp(top):
+                    postfix.append(st.pop())
+                    st.append(i)
+                else:
+                    while st:
+                        top = st[-1]
+                        if isp(top) < icp(i):
+                            break
+                        else:
+                            postfix.append(st.pop())
+                    st.append(i)    
+    while st:
+        postfix.append(st.pop())
+    print('#{} {}'. format(tc, operation(postfix)))
+
+# 1222
+
+def icp(t): #스택에 넣을 때
+    return 1
+
+def isp(t): # 스택안에
+    return 1
+
+def operation(arr):
+    op = ['+']
+    st = []
+    for c in arr:
+        if c not in op:
+            st. append(c)
+        else:
+            op1 = st.pop()
+            op2 = st.pop()
+            st.append(op1+op2)
+    return st[0]
+
+for tc in range(1, 11):
+    l = int(input())
+    c = list(map(str, input()))
+    operator = ['+']
+    postfix = []
+    st = []
+    for i in c:
+        if i not in operator:
+            postfix.append(int(i))
+        else:
+            if st == []:
+                st.append(i)
+            else:
+                top = st[-1]
+                if icp(i) > isp(top):
+                    st.append(i)
+                elif icp(i) == isp(top):
+                    postfix.append(st.pop())
+                    st.append(i)
+                else:
+                    while st:
+                        top = st[-1]
+                        if isp(top) < icp(i):
+                            break
+                        else:
+                            postfix.append(st.pop())
+                    st.append(i)    
+    while st:
+        postfix.append(st.pop())
+    print('#{} {}'. format(tc, operation(postfix)))
