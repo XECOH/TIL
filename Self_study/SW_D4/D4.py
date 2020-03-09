@@ -120,6 +120,7 @@
     #     i += 1
     # print('#{} {}'.format(tc+1, cnt))
 
+
 # 7701
 
 # for tc in range(int(input())):
@@ -135,7 +136,59 @@
 
 # 4672
 
-for tc in range(int(input())):
-    word = input()
+# for tc in range(int(input())):
+#     word = input()
 
-    print('#{} {}'.format(tc+1, cnt))
+#     print('#{} {}'.format(tc+1, cnt))
+
+# 1868
+
+# for tc in range(int(input())):
+#     n = int(input())
+#     table = [list(map(str, input())) for _ in range(n)]
+
+# 1494
+
+# for tc in range(int(input())):
+#     n = int(input())
+#     td = [[0]*(2000001) for _ in range(200001)]
+#     for t in range(n):
+#         x, y = map(int, input().split())
+#         if x < 0:
+#             x = -x
+#         if y < 0:
+#             y = -y
+#         if x >= 0:
+#             x = x + 100000
+#         if y >= 0:
+#             y = y + 100000
+#     for row in td:
+#         print(row)
+
+# 4408
+
+for tc in range(1, int(input())+1):
+    n = int(input())
+    rooms = [0] * 401
+    for i in range(n):
+        cr, mr = map(int, input().split())
+        for c in range(cr+1, mr+1):
+            rooms[c] += 1
+    print('#{} {}'.format(tc, max(rooms)))
+    
+
+# 3347
+
+# for tc in range(1, int(input())+1):
+#     n, m = map(int, input().split())
+#     a = list(map(int, input().split()))
+#     b = list(map(int, input().split()))
+#     cnt = [0] * n
+#     for i in range(m):
+#         j = 0
+#         while j < n:
+#             if b[i] >= a[j]:
+#                 cnt[j] += 1
+#                 break
+#             j += 1
+#     print('#{} {}'.format(tc, cnt.index(max(cnt))+1))

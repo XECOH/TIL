@@ -987,23 +987,19 @@
 
 # 5642
 
-# for tc in range(int(input())):
-#     n = int(input())
-#     nums = list(map(int, input().split()))
-#     maxS = max(nums)
-#     sum1 = max(nums)
-#     sum2 = max(nums)
-#     s = nums.index(max(nums))
-#     for i in range(n-1, -1, -1):
-#         if i < s:
-#             sum1 += nums[i]
-#             if sum1 > maxS:
-#                 maxS = sum1
-#         elif i > s:
-#             sum2 += nums[-(i-s)]
-#             if sum2 > maxS:
-#                 maxS = sum2
-#     print('#{} {}'.format(tc+1, maxS))
+for tc in range(int(input())):
+    n = int(input())
+    nums = list(map(int, input().split()))
+    maxS = 0
+    sum = 0
+    for i in range(n):
+        if nums[i] < 0:
+            sum = 0
+        else:
+            sum += nums[i]
+        if maxS < sum:
+            maxS = sum
+    print('#{} {}'.format(tc+1, maxS))
 
 # 3307
 

@@ -35,7 +35,22 @@
 
 # 5653
 
+# for tc in range(int(input())):
+#     n, m, k = map(int, input().split())
+#     grid = [list(map(int, input().split())) for _ in range(n)]
+    
+# 1953
+
+# for tc in range(int(input())):
+#     n, m, r, c, l = map(int, input().split())
+#     base = [list(map(int, input().split())) for _ in range(n)]
+#     check = [[0]*m for _ in range(n)]
+#     cnt = 0
+#     for 
+#     print('#{} {}'.format(tc+1, cnt))
+
+# 2382
+
 for tc in range(int(input())):
     n, m, k = map(int, input().split())
-    grid = [list(map(int, input().split())) for _ in range(n)]
     

@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03c998fb-542e-403d-9401-6cbac93d3eb2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/queue.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/모의SW.py" beforeDir="false" afterPath="$PROJECT_DIR$/모의SW.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,9 +98,9 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="SW_D2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="queue" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Self_study" />
-      <option name="INTERPRETER_OPTIONS" value="Python" />
+      <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
@@ -110,9 +110,9 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SW_D2.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/queue.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -143,10 +143,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.xcxc" />
+        <item itemvalue="Python.queue" />
         <item itemvalue="Python.모의SW" />
         <item itemvalue="Python.A형대비" />
         <item itemvalue="Python.D4" />
-        <item itemvalue="Python.SW_D2" />
       </list>
     </recent_temporary>
   </component>
@@ -164,42 +164,42 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="933" y="171" key="FileChooserDialogImpl" timestamp="1583592125929">
+    <state x="933" y="171" key="FileChooserDialogImpl" timestamp="1583638934859">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="933" y="171" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1583592125929" />
-    <state width="748" height="251" key="GridCell.Tab.0.bottom" timestamp="1583593838349">
+    <state x="933" y="171" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1583638934859" />
+    <state width="748" height="251" key="GridCell.Tab.0.bottom" timestamp="1583638973549">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="748" height="251" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583593838349" />
-    <state width="748" height="251" key="GridCell.Tab.0.center" timestamp="1583593838349">
+    <state width="748" height="251" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583638973548" />
+    <state width="748" height="251" key="GridCell.Tab.0.center" timestamp="1583638973548">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="748" height="251" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1583593838349" />
-    <state width="748" height="251" key="GridCell.Tab.0.left" timestamp="1583593838349">
+    <state width="748" height="251" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1583638973548" />
+    <state width="748" height="251" key="GridCell.Tab.0.left" timestamp="1583638973548">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="748" height="251" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1583593838349" />
-    <state width="748" height="251" key="GridCell.Tab.0.right" timestamp="1583593838349">
+    <state width="748" height="251" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1583638973548" />
+    <state width="748" height="251" key="GridCell.Tab.0.right" timestamp="1583638973548">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="748" height="251" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583593838349" />
-    <state width="748" height="251" key="GridCell.Tab.1.bottom" timestamp="1583593838350">
+    <state width="748" height="251" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583638973548" />
+    <state width="748" height="251" key="GridCell.Tab.1.bottom" timestamp="1583638973549">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="748" height="251" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583593838350" />
-    <state width="748" height="251" key="GridCell.Tab.1.center" timestamp="1583593838350">
+    <state width="748" height="251" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583638973549" />
+    <state width="748" height="251" key="GridCell.Tab.1.center" timestamp="1583638973549">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="748" height="251" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1583593838350" />
-    <state width="748" height="251" key="GridCell.Tab.1.left" timestamp="1583593838349">
+    <state width="748" height="251" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1583638973549" />
+    <state width="748" height="251" key="GridCell.Tab.1.left" timestamp="1583638973549">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="748" height="251" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1583593838349" />
-    <state width="748" height="251" key="GridCell.Tab.1.right" timestamp="1583593838350">
+    <state width="748" height="251" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1583638973549" />
+    <state width="748" height="251" key="GridCell.Tab.1.right" timestamp="1583638973549">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="748" height="251" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1583593838350" />
+    <state width="748" height="251" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1583638973549" />
     <state x="471" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1583134021227">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -231,6 +231,11 @@
           <url>file://$PROJECT_DIR$/../../xcxc.py</url>
           <line>223</line>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/queue.py</url>
+          <line>22</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
