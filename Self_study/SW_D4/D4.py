@@ -184,6 +184,21 @@
 #             rooms[c] += 1
 #     print('#{} {}'.format(tc, max(rooms)))
 
+'''
+*coaching*
+
+for tc in range(1, int(input())+1):
+    n = int(input())
+    cnt = [0] * 201
+    for _ in range(n):
+        a, b = map(int, input().split())
+        a = (a+1)//2
+        b = (b+1)//2
+        if a > b: a, b = b, a
+        for i in range(a, b+1):
+            cnt[i] += 1
+    print('#{} {}'.format(tc, max(cnt)))
+'''
 
 # 3347
 
@@ -203,113 +218,171 @@
 
 # 1223
 
-def icp(t): #스택에 넣을 때
-    if t =='*':
-        return 2
-    else:
-        return 1
+# def icp(t): #스택에 넣을 때
+#     if t =='*':
+#         return 2
+#     else:
+#         return 1
 
-def isp(t): # 스택안에
-    if t == '*':
-        return 2
-    else:
-        return 1
+# def isp(t): # 스택안에
+#     if t == '*':
+#         return 2
+#     else:
+#         return 1
 
-def operation(arr):
-    op = ['*', '+']
-    st = []
-    for c in arr:
-        if c not in op:
-            st. append(c)
-        else:
-            if c == '*':
-                op1= st.pop()
-                op2= st.pop()
-                st.append(op1*op2)
-            else:
-                op1 = st.pop()
-                op2 = st.pop()
-                st.append(op1+op2)
-    return st[0]
+# def operation(arr):
+#     op = ['*', '+']
+#     st = []
+#     for c in arr:
+#         if c not in op:
+#             st. append(c)
+#         else:
+#             if c == '*':
+#                 op1= st.pop()
+#                 op2= st.pop()
+#                 st.append(op1*op2)
+#             else:
+#                 op1 = st.pop()
+#                 op2 = st.pop()
+#                 st.append(op1+op2)
+#     return st[0]
 
-for tc in range(1, 2):
-    l = int(input())
-    c = list(map(str, input()))
-    operator = ['*', '+']
-    postfix = []
-    st = []
-    for i in c:
-        if i not in operator:
-            postfix.append(int(i))
-        else:
-            if st == []:
-                st.append(i)
-            else:
-                top = st[-1]
-                if icp(i) > isp(top):
-                    st.append(i)
-                elif icp(i) == isp(top):
-                    postfix.append(st.pop())
-                    st.append(i)
-                else:
-                    while st:
-                        top = st[-1]
-                        if isp(top) < icp(i):
-                            break
-                        else:
-                            postfix.append(st.pop())
-                    st.append(i)    
-    while st:
-        postfix.append(st.pop())
-    print('#{} {}'. format(tc, operation(postfix)))
+# for tc in range(1, 2):
+#     l = int(input())
+#     c = list(map(str, input()))
+#     operator = ['*', '+']
+#     postfix = []
+#     st = []
+#     for i in c:
+#         if i not in operator:
+#             postfix.append(int(i))
+#         else:
+#             if st == []:
+#                 st.append(i)
+#             else:
+#                 top = st[-1]
+#                 if icp(i) > isp(top):
+#                     st.append(i)
+#                 elif icp(i) == isp(top):
+#                     postfix.append(st.pop())
+#                     st.append(i)
+#                 else:
+#                     while st:
+#                         top = st[-1]
+#                         if isp(top) < icp(i):
+#                             break
+#                         else:
+#                             postfix.append(st.pop())
+#                     st.append(i)    
+#     while st:
+#         postfix.append(st.pop())
+#     print('#{} {}'. format(tc, operation(postfix)))
 
 # 1222
 
-def icp(t): #스택에 넣을 때
-    return 1
+# def icp(t): #스택에 넣을 때
+#     return 1
 
-def isp(t): # 스택안에
-    return 1
+# def isp(t): # 스택안에
+#     return 1
 
-def operation(arr):
-    op = ['+']
-    st = []
-    for c in arr:
-        if c not in op:
-            st. append(c)
-        else:
-            op1 = st.pop()
-            op2 = st.pop()
-            st.append(op1+op2)
-    return st[0]
+# def operation(arr):
+#     op = ['+']
+#     st = []
+#     for c in arr:
+#         if c not in op:
+#             st. append(c)
+#         else:
+#             op1 = st.pop()
+#             op2 = st.pop()
+#             st.append(op1+op2)
+#     return st[0]
 
-for tc in range(1, 11):
-    l = int(input())
-    c = list(map(str, input()))
-    operator = ['+']
-    postfix = []
-    st = []
-    for i in c:
-        if i not in operator:
-            postfix.append(int(i))
-        else:
-            if st == []:
-                st.append(i)
-            else:
-                top = st[-1]
-                if icp(i) > isp(top):
-                    st.append(i)
-                elif icp(i) == isp(top):
-                    postfix.append(st.pop())
-                    st.append(i)
-                else:
-                    while st:
-                        top = st[-1]
-                        if isp(top) < icp(i):
-                            break
-                        else:
-                            postfix.append(st.pop())
-                    st.append(i)    
-    while st:
-        postfix.append(st.pop())
-    print('#{} {}'. format(tc, operation(postfix)))
+# for tc in range(1, 11):
+#     l = int(input())
+#     c = list(map(str, input()))
+#     operator = ['+']
+#     postfix = []
+#     st = []
+#     for i in c:
+#         if i not in operator:
+#             postfix.append(int(i))
+#         else:
+#             if st == []:
+#                 st.append(i)
+#             else:
+#                 top = st[-1]
+#                 if icp(i) > isp(top):
+#                     st.append(i)
+#                 elif icp(i) == isp(top):
+#                     postfix.append(st.pop())
+#                     st.append(i)
+#                 else:
+#                     while st:
+#                         top = st[-1]
+#                         if isp(top) < icp(i):
+#                             break
+#                         else:
+#                             postfix.append(st.pop())
+#                     st.append(i)    
+#     while st:
+#         postfix.append(st.pop())
+#     print('#{} {}'. format(tc, operation(postfix)))
+
+# 1227
+
+# def miro(i, j):
+#     dr = [-1, 0, 1, 0]
+#     dc = [0, 1, 0, -1]
+#     st = [[i, j]]
+#     while st:
+#         [ci, cj] = st.pop()
+#         for k in range(4):
+#             nr = ci + dr[k]
+#             nc = cj + dc[k]
+#             if nr < 0 or nr >= 100 or nc < 0 or nc >= 100: continue
+#             if maze[nr][nc] == 1: continue
+#             if maze[nr][nc] == 3: return 1
+#             if maze[nr][nc] == 9: continue
+#             maze[nr][nc] = 9
+#             st.append([nr, nc])
+#     return 0
+
+# for tc in range(1, 2):
+#     n = int(input())
+#     maze = [list(map(int, input())) for _ in range(100)]
+#     for i in range(100):
+#         sr, sc= -1, -1
+#         for j in range(100):
+#             if maze[i][j] == 2:
+#                 sr = i
+#                 sc = j
+#                 break
+#         if sr != -1 and sc != -1: break
+#     print('#{} {}'.format(tc, miro(sr, sc)))
+
+# 3349
+
+# for tc in range(1, int(input())+1):
+#     w, h, n = map(int, input().split())
+#     ic = [list(map(int, input().split())) for _ in range(n)]
+#     dr = [0, -1, 1, 1, 0, -1]
+#     dc = [1, 0, 1, 0, -1, -1]
+#     q = 0
+#     st = [ic[0]+[0]]
+#     i = 1
+#     while i < n:
+#         [ci, cj, q] = st.pop(0)
+#         for k in range(5):
+#             ni = ci + dr[k]
+#             nj = cj + dc[k]
+#             if ni < 1 or ni > w or nj < 1 or nj > h: continue
+#             q += 1
+#             if [ni, nj] == ic[i]:
+#                 st.append(ic[i]+[q])
+#                 i += 1
+#                 q -= 1
+#                 break
+#             else:
+#                 st.append([ni, nj, q])
+#                 q -= 1
