@@ -53,72 +53,53 @@
 
 # 5099
 
-for tc in range(1, int(input())+1):
-    n, m = map(int, input().split())
-    o = [0] * n
-    c = list(map(int, input().split()))
-    i = 0
-    j = 0
-    com = n
-    while o.count([-1, -1]) != (n-1):
-        if com > 0 and i < m:
-            o[j] = [c[i] , i+1]
-            j += 1
-            i += 1
-            com -= 1
-        else:
-            if j == n:
-                j = 0
-            while True:
-                if o[j][0] == -1:
-                    j += 1
-                    if j >= n:
-                        j = 0
-                if o[j][0] != -1:
-                    o[j][0] = o[j][0]//2
-                else:
-                    j += 1
-                    if j >= n:
-                        j = 0
-                if o[j][0] != -1:
-                    o[j][0] = o[j][0]//2
-                if o[j][0] == 0:
-                    o[j][0] = -1
-                    o[j][1] = -1
-                    com += 1
-                    break
-                else:
-                    j += 1
-                if j == n:
-                    j = 0
-    for i in range(n):
-        if o[i][0] != -1:
-            print('#{} {}'.format(tc, o[i][1]))
-            break
+# for tc in range(1, int(input())+1):
+#     n, m = map(int, input().split())
+#     cheez = list(map(int, input().split()))
+#     oven = [[cheez[i], i+1] for i in range(n)]
+#     i = n
+#     while len(oven) != 1:
+#         if oven[0][0] != 0:
+#             oven[0][0] //= 2
+#             if oven[0][0] == 0:
+#                 oven.pop(0)
+#                 if i < m:
+#                     oven.append([cheez[i], i+1])
+#                     i += 1
+#             else:
+#                 pizza = oven.pop(0)
+#                 oven.append(pizza)
+#     print('#{} {}'.format(tc, oven[0][1]))
         
-
 #5102
 
-# def find(sn, en, cnt):
-#     global visited
-#     if graph[sn][en] == 1:
-#         return cnt
-#     else:
-#         for i in range(1, v + 1):
-#             if visited[sn] != 1 and graph[sn][i] == 1:
+# def find(s, d):
+#     global minA
+#     visited = [0] * (v+1)
+#     que = [[s, 0]]
+#     while que:
+#         [sn, q] = que.pop(0)
+#         for i in range(1, v+1):
+#             if sn == d:
+#                 minA.append(q)
+#                 break
+#             if visited[i] != 1 and graph[sn][i] == 1:
 #                 visited[sn] = 1
-#                 find(i, en, cnt + 1)
-#                 visited[sn] = 0
+#                 q += 1
+#                 que.append([i, q])
+#                 q -= 1
+#     return
 
-
-# for tc in range(int(input())):
+# for tc in range(1, int(input())+1):
+#     minA = []
 #     v, e = map(int, input().split())
-#     graph = [[0 for _ in range(v + 1)] for _ in range(v + 1)]
-#     for i in range(e):
-#         nod1, nod2 = map(int, input().split())
-#         graph[nod1][nod2] = 1
-#         graph[nod2][nod1] = 1
+#     graph = [[0]*(v+1) for _ in range(v+1)]
+#     for _ in range(e):
+#         n1, n2 = map(int, input().split())
+#         graph[n1][n2] = graph[n2][n1] = 1
 #     s, g = map(int, input().split())
-#     visited = [0] * (v + 1)
-#     find(s, g, 0)
-#     print('#{} {}'.format(tc + 1, find(s, g, 0)))
+#     find(s, g)
+#     if len(minA) != 0:
+#         print('#{} {}'.format(tc, min(minA)))
+#     else:
+#         print('#{} {}'.format(tc, 0))
