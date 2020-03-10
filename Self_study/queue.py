@@ -59,14 +59,42 @@ for tc in range(1, int(input())+1):
     c = list(map(int, input().split()))
     i = 0
     j = 0
-    while len(o) != 1:
-        if j < n:
-            o[j] = c[i]
+    com = n
+    while o.count([-1, -1]) != (n-1):
+        if com > 0 and i < m:
+            o[j] = [c[i] , i+1]
             j += 1
             i += 1
+            com -= 1
         else:
-            j = 0
-            
+            if j == n:
+                j = 0
+            while True:
+                if o[j][0] == -1:
+                    j += 1
+                    if j >= n:
+                        j = 0
+                if o[j][0] != -1:
+                    o[j][0] = o[j][0]//2
+                else:
+                    j += 1
+                    if j >= n:
+                        j = 0
+                if o[j][0] != -1:
+                    o[j][0] = o[j][0]//2
+                if o[j][0] == 0:
+                    o[j][0] = -1
+                    o[j][1] = -1
+                    com += 1
+                    break
+                else:
+                    j += 1
+                if j == n:
+                    j = 0
+    for i in range(n):
+        if o[i][0] != -1:
+            print('#{} {}'.format(tc, o[i][1]))
+            break
         
 
 #5102
