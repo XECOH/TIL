@@ -365,24 +365,35 @@ for tc in range(1, int(input())+1):
 
 # for tc in range(1, int(input())+1):
 #     w, h, n = map(int, input().split())
-#     ic = [list(map(int, input().split())) for _ in range(n)]
-#     dr = [0, -1, 1, 1, 0, -1]
-#     dc = [1, 0, 1, 0, -1, -1]
-#     q = 0
-#     st = [ic[0]+[0]]
-#     i = 1
-#     while i < n:
-#         [ci, cj, q] = st.pop(0)
-#         for k in range(5):
-#             ni = ci + dr[k]
-#             nj = cj + dc[k]
-#             if ni < 1 or ni > w or nj < 1 or nj > h: continue
-#             q += 1
-#             if [ni, nj] == ic[i]:
-#                 st.append(ic[i]+[q])
-#                 i += 1
-#                 q -= 1
-#                 break
+#     moving = [list(map(int, input().split())) for _ in range(n)]
+#     minE = 0
+#     for i in range(n-1):
+#         if moving[i][0] < moving[i+1][0] and moving[i][1] < moving[i+1][1]:
+#             if abs(moving[i][0]-moving[i][1]) == abs(moving[i+1][0]-moving[i+1][1]):
+#                 minE += abs(moving[i][0]-moving[i][1])
 #             else:
-#                 st.append([ni, nj, q])
-#                 q -= 1
+
+
+'''
+coaching
+
+for tc in range(1, int(input())+1):
+    w, h, n = map(int, input().split())
+    x, y = map(int, input().split())
+    ans = 0
+    for _ in range(n-1):
+        tx, ty = map(int, input().split())
+    생    # # 수직 이동
+    략    # if x == tx: ans += abs(y-ty)
+    가    # # 수평 이동
+    능     # elif y == ty: ans += abs(x-tx)
+        a = x - tx
+        b = y - ty 
+        # 대각선 이동
+        # 좌상우하
+        if a*b < 0 : ans += (abs(a)+abs(b))
+        # 좌하우상
+        else:
+            ans += max(abs(a), abs(b))
+        x , y = tx, ty
+'''

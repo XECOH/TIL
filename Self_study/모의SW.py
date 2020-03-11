@@ -15,11 +15,25 @@
 
 # 4012
 
-# for tc in range(int(input())):
-#     n = int(input())
-#     table = [[0]*(n+1)]+[[0]+list(map(int, input().split())) for _ in range(n)]
-#     diff = 1000000000
-#     print('#{} {}'.format(tc+1, diff))
+def synergy(s, r):
+    global diff
+    check = [0]*(n+1)
+    for _ in range(r):
+        check[1] = 1
+        i = 2
+        while i < n+1:
+            check[i] = 1
+
+
+for tc in range(int(input())):
+    n = int(input())
+    diff = 1000000000000000000
+    table = [[0]*(n+1)]+[[0]+list(map(int, input().split())) for _ in range(n)]
+    repeat = 1
+    for i in range((n//2)-1):
+        repeat *= (n-1)-i
+        repeat /= (n//2)-1-i
+    synergy(1, int(repeat))
 
 # 2105
 
