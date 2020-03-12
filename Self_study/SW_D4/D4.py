@@ -397,3 +397,205 @@ for tc in range(1, int(input())+1):
             ans += max(abs(a), abs(b))
         x , y = tx, ty
 '''
+# 4672
+
+# for tc in range(1, int(input())+1):
+#     words = list(input())
+#     combi = sorted(list(set([(words[i], words.count(words[i])) for i in range(len(words))])), key = lambda x: x[1], reverse = True)
+#     nwords = []
+#     for i in range(len(combi)):
+#         if combi[i][1] % 2 and combi[i][1] >= 2:
+#             for _ in range(combi[i][1]):
+#                 nwords.insert(len(nwords)//2, combi[i][0])
+#         elif combi[i][1] % 2 == 0:
+#             t = combi[i][1]
+#             while t > 0:
+#                 nwords.insert(0, combi[i][0])
+#                 nwords.append(combi[i][0])
+#                 t -= 2
+#     sum = len(words)
+#     for i in range(len(nwords)-1):
+#         temp = ''
+#         temp += nwords[i]
+#         for j in range(i+1, len(nwords)):
+#             temp += nwords[j]
+#             if temp == temp[::-1]: sum += 1
+#     print('#{} {}'.format(tc, sum))
+
+# 1226
+
+# def miro(sr, sc, n):
+#     global maze
+#     dr = [-1, 1, 0, 0]
+#     dc = [0, 0, -1, 1]
+#     visited = list()
+#     if maze[sr][sc] == 3: return 1
+#     visited.append(sr)
+#     visited.append(sc)
+#     while visited:
+#         sr = visited.pop(0)
+#         sc = visited.pop(0)
+#         if maze[sr][sc] == 9: continue
+#         maze[sr][sc] = 9
+#         for k in range(4):
+#             nr = sr + dr[k]
+#             nc = sc + dc[k]
+#             if 0 > nr or nr > n or nc < 0 or nc > n: continue
+#             if maze[nr][nc] == 1: continue
+#             if maze[nr][nc] == 3: return 1
+#             if maze[nr][nc] == 9: continue
+#             if maze[nr][nc] == 0:
+#                 visited.append(nr)
+#                 visited.append(nc)
+#     return 0
+# T = int(input())
+# for tc in range(1, T+1):
+#     n = int(input())
+#     maze = [list(map(int, input())) for _ in range(n)]
+#     for i in range(n):
+#         for j in range(n):
+#             if maze[i][j] == 2:
+#                 sr = i
+#                 sc = j
+#     print('#{} {}'.format(tc, miro(sr, sc, n)))
+
+# 1210
+
+# def search(r, c):
+#     dr = [0, 0, -1]
+#     dc = [1, -1, 0]
+#     visited = [[0 for i in range(N)] for j in range(N)]
+#     num = arr[r][c]
+
+#     while True:
+#         if r == 0: return c
+#         for k in range(3):
+#             nr = r + dr[k]
+#             nc = c + dc[k]
+#             if nr < 0 or nr >= N or nc < 0 or nc >= N: continue
+#             if visited[nr][nc] == 1: continue
+#             if arr[nr][nc] == 0: continue
+#             r = nr
+#             c = nc
+#             visited[nr][nc] = 1
+#             num = arr[nr][nc]
+#             break
+
+# T = 10
+# for tc in range(1, T+1):
+#     t = int(input())
+#     N = 100
+#     arr = [list(map(int, input().split())) for _ in range(N)]
+#     for i in range(N):
+#         if arr[99][i] == 2:
+#             sp = search(99, i)
+
+#     print('#{} {}'.format(tc, sp))
+
+# 1224
+
+# def operate(input_data, output_data):
+#     operator = ['*', '+']
+#     for i in input_data:
+#         if i not in operator:
+#             output_data.append(int(i))
+#         elif i in operator:
+#             if len(input_data) >= 2:
+#                 if i == '+':
+#                     op1 = output_data.pop()
+#                     op2 = output_data.pop()
+#                     output_data.append(op2 + op1)
+#                 elif i == '*':
+#                     op1 = output_data.pop()
+#                     op2 = output_data.pop()
+#                     output_data.append(op2 * op1)
+#     return output_data.pop()
+
+# def is_number(x): # 숫자인지
+#     if x != '*' and x != '(' and x != ')' and x != '+':
+#         return True
+#     else:
+#         return False
+
+# def isp(token): # 스택의 top연산자 우선순위
+#     if token == '(':
+#         return 0
+#     elif token == '+':
+#         return 1
+#     elif token == '*':
+#         return 2
+
+# def icp(token): # 스택으로 들어갈 연산자 우선 순위
+#     if token == '(':
+#         return 3
+#     elif token == '+':
+#         return 1
+#     elif token == '*':
+#         return 2
+
+# for tc in range(1, 11):
+#     l = int(input())
+#     infix = list(input())
+#     postfix = list()
+#     st = list()
+#     ans = list()
+#     for i in infix:
+#         if is_number(i):
+#             postfix.append(i)
+#         elif is_number(i) == False and st == []:
+#             st.append(i)
+#         elif i == ')':
+#             while st[-1] != '(':
+#                 postfix.append(st.pop())
+#             st.pop()
+#         elif is_number(i) == False and isp(st[-1]) < icp(i):
+#             st.append(i)
+#         elif is_number(i) == False and isp(st[-1]) >= icp(i):
+#             while st:
+#                 top = st[-1]
+#                 if isp(top) <= icp(i):
+#                     break
+#                 postfix.append(st.pop())
+#             st.append(i)
+#     while st:
+#         postfix.append(st.pop())
+#     print('#{} {}'.format(tc, operate(postfix, ans)))
+
+# 1861
+
+# for tc in range(int(input())):
+#     n = int(input())
+#     room = [list(map(int, input().split())) for _ in range(n)]
+#     c = [0] * ((n**2)+1)
+#     maxT = -1
+#     cnt = 1
+#     minN = 123456789
+#     dr = [-1, 0, 1, 0]
+#     dc = [0, 1, 0, -1]
+#     for i in range(n):
+#         for j in range(n):
+#             for k in range(4):
+#                 nr = i+dr[k]
+#                 nc = j+dc[k]
+#                 if 0 <= nr < n and 0 <= nc < n:
+#                     if room[nr][nc] - room[i][j] == 1:
+#                         c[room[i][j]] = 1
+#                         break
+#     for i in range(len(c)):
+#         if c[i] == 1:
+#             cnt += 1
+#         elif c[i] == 0:
+#             if cnt > maxT:
+#                 maxT = cnt
+#                 minN = (i-cnt)+1
+#                 cnt = 1
+#             elif cnt == maxT:
+#                 if minN > (i-cnt)+1:
+#                     minN = (i-cnt)+1
+#                     cnt = 1
+#                 else:
+#                     cnt = 1
+#             else:
+#                 cnt = 1
+
+#     print('#{} {} {}'.format(tc+1, minN, maxT))
