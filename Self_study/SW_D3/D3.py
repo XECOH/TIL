@@ -987,19 +987,19 @@
 
 # 5642
 
-for tc in range(int(input())):
-    n = int(input())
-    nums = list(map(int, input().split()))
-    maxS = 0
-    sum = 0
-    for i in range(n):
-        if nums[i] < 0:
-            sum = 0
-        else:
-            sum += nums[i]
-        if maxS < sum:
-            maxS = sum
-    print('#{} {}'.format(tc+1, maxS))
+# for tc in range(int(input())):
+#     n = int(input())
+#     nums = list(map(int, input().split()))
+#     maxS = 0
+#     sum = 0
+#     for i in range(n):
+#         if nums[i] < 0:
+#             sum = 0
+#         else:
+#             sum += nums[i]
+#         if maxS < sum:
+#             maxS = sum
+#     print('#{} {}'.format(tc+1, maxS))
 
 # 3307
 
@@ -1167,3 +1167,40 @@ for tc in range(int(input())):
 #     bi = ['00', '01', '10', '11']
 #     abcd = list(map(int, input().split()))
 #     print('#{} {}'.format(tc+1, ))
+
+# 4615
+
+# for tc in range(1, int(input())+1):
+#     n, m = map(int, input().split())
+#     board = [[0 for _ in range(n+1)] for _ in range(n+1)]
+#     board[n//2][n//2] = board[n//2+1][n//2+1] = 2
+#     board[n//2][n//2+1] = board[n//2+1][n//2] = 1
+#     cnt = [0, 2, 2]
+#     dr = [-1, -1, -1, 0, 1, 1, 1, 0]
+#     dc = [-1, 0, 1, 1, 1, 0, -1, -1]
+#     for _ in range(m):
+#         r, c, s = map(int, input().split())
+#         board[r][c] = s
+#         cnt[s] += 1
+#         for k in range(8):
+#             cr, cc = r, c
+#             st = []
+#             while True:
+#                 nr = cr + dr[k]
+#                 nc = cc + dc[k]
+#                 if nr <= 0 or nr > n or nc <= 0 or nc > n:
+#                     st = []
+#                     break
+#                 if board[nr][nc] == s: break
+#                 elif board[nr][nc] != 0:
+#                     st.append([nr, nc])
+#                 elif board[nr][nc] == 0:
+#                     st = []
+#                     break
+#                 cr, cc = nr, nc
+#             while st:
+#                 [i, j] = st.pop()
+#                 board[i][j] = s
+#                 cnt[s] += 1
+#                 cnt[-s] -= 1
+#     print('#{} {} {}'.format(tc, cnt[1], cnt[2]))

@@ -599,3 +599,36 @@ for tc in range(1, int(input())+1):
 #                 cnt = 1
 
 #     print('#{} {} {}'.format(tc+1, minN, maxT))
+
+# 4613
+
+def find(x):
+    for i in range(0, x-3+1):
+        for j in range(i+1, x-2+1):
+            w = arr[:i+1]
+            b = arr[i+1:j+1]
+            r = arr[j+1:x]
+            coloring(w, b, r)
+
+def coloring(i, j, k):
+    global minC
+    c = 0
+    for x in i:
+        for y in range(m):
+            if flag[x][y] != 'W': c += 1
+    for x in j:
+        for y in range(m):
+            if flag[x][y] != 'B': c += 1
+    for x in k:
+        for y in range(m):
+            if flag[x][y] != 'R': c += 1
+    if minC > c: minC = c
+    return
+
+for tc in range(1, int(input())+1):
+    n, m = map(int, input().split())
+    flag = [list(input()) for _ in range(n)]
+    arr = [i for i in range(n)]
+    minC = 100000000000000
+    find(n)
+    print('#{} {}'.format(tc, minC))
