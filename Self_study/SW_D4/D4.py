@@ -644,3 +644,111 @@ for tc in range(1, int(input())+1):
 # for tc in range(1, int(input())+1):
 #     a, b = input().split()
 #     print('#{} {}'.format(tc, a.count(b)+(len(a)-len(b)*a.count(b))))
+
+# 4259
+
+# for tc in range(1, int(input())+1):
+#     n = int(input())
+#     nums= list(input().split())
+#     result = 0
+#     for num in nums:
+#         result += (int(num[0:len(num)-1])**int(num[-1]))
+#     print('#{} {}'.format(tc, result))
+
+# 6109
+
+# def rotate():
+#     global grid
+#     newarr = [[0 for _ in range(int(n))] for _ in range(int(n))]
+#     for i in range(int(n)):
+#         for j in range(int(n)):
+#             newarr[j][int(n)-i-1] = grid[i][j]
+#     grid = newarr
+
+# for tc in range(1, int(input())+1):
+#     n, d = input().split()
+#     grid = [list(map(int, input().split())) for _ in range(int(n))]
+#     result = []
+#     if d == 'left':
+#         rotate()
+#         rotate()
+#     elif d == 'up':
+#         rotate()
+#     elif d == 'down':
+#         rotate()
+#         rotate()
+#         rotate()
+#     for i in range(int(n)):
+#         st = [j for j in grid[i] if j != 0]
+#         for k in range(len(st)-1, 0, -1):
+#             if st[k] == st[k-1]:
+#                 st[k] *= 2
+#                 st[k-1] = 0
+#             else: continue
+#         temp = [j for j in st if j != 0]
+#         t = len(temp)
+#         while t != int(n):
+#             temp.insert(0, 0)
+#             t += 1
+#         result.append(temp)
+#     grid = [result[i] for i in range(int(n))]
+
+#     if d == 'left':
+#         rotate()
+#         rotate()
+#     elif d == 'up':
+#         rotate()
+#         rotate()
+#         rotate()
+#     elif d == 'down':
+#         rotate()
+
+#     print('#{}'.format(tc))
+#     for k in range(int(n)):
+#         print(' '.join(map(str, grid[k])))
+
+# 1868
+
+for tc in range(1, int(input())+1):
+    n = int(input())
+    table = [list(input()) for _ in range(n)]
+    dr = [-1, -1, -1, 0, 1, 1, 1, 0]
+    dc = [-1, 0, 1, 1, 1, 0, -1, -1]
+    minC = 0
+    check = []
+    for i in range(n):
+        for j in range(n):
+            popping = 0
+            for k in range(8):
+                if i+dr[k] < 0 or i+dr[k] >= n or j+dc[k] < 0 or j+dc[k] >= n: continue
+                if table[i+dr[k]][j+dc[k]] == '*':
+                    popping = -1
+                    break
+            st = []
+            if popping == 0:
+                table[i][j] = 0
+                minC += 1
+                st.append([i, j])
+                check.append([i, j])
+            while st:
+                [r, c] = st.pop(0)
+                for l in range(8):
+                    mine = 0
+                    cr = r+dr[l]
+                    cc = c+dc[l]
+                    if cr < 0 or cr >= n or cc < 0 or cc >= n: continue
+                    for m in range(8):
+                        nr = cr+dr[m]
+                        nc = cc+dc[m]
+                        if nr < 0 or nr >= n or nc < 0 or nc >= n: continue
+                        if table[nr][nc] == '*': mine += 1
+                        else: continue
+                    if mine == 0 and [cr, cc] not in check: st.append([cr, cc])
+                    else: table[cr][cc] = mine
+    
+    for i in range(n):
+        for j in range(n):
+            if table[i][j] == '.': minC += 1
+            else: continue
+    print('#{} {}'.format(tc, minC))
+                    
