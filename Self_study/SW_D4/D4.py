@@ -709,46 +709,235 @@ for tc in range(1, int(input())+1):
 
 # 1868
 
-for tc in range(1, int(input())+1):
-    n = int(input())
-    table = [list(input()) for _ in range(n)]
-    dr = [-1, -1, -1, 0, 1, 1, 1, 0]
-    dc = [-1, 0, 1, 1, 1, 0, -1, -1]
-    minC = 0
-    check = []
-    for i in range(n):
-        for j in range(n):
-            popping = 0
-            for k in range(8):
-                if i+dr[k] < 0 or i+dr[k] >= n or j+dc[k] < 0 or j+dc[k] >= n: continue
-                if table[i+dr[k]][j+dc[k]] == '*':
-                    popping = -1
-                    break
-            st = []
-            if popping == 0:
-                table[i][j] = 0
-                minC += 1
-                st.append([i, j])
-                check.append([i, j])
-            while st:
-                [r, c] = st.pop(0)
-                for l in range(8):
-                    mine = 0
-                    cr = r+dr[l]
-                    cc = c+dc[l]
-                    if cr < 0 or cr >= n or cc < 0 or cc >= n: continue
-                    for m in range(8):
-                        nr = cr+dr[m]
-                        nc = cc+dc[m]
-                        if nr < 0 or nr >= n or nc < 0 or nc >= n: continue
-                        if table[nr][nc] == '*': mine += 1
-                        else: continue
-                    if mine == 0 and [cr, cc] not in check: st.append([cr, cc])
-                    else: table[cr][cc] = mine
+# for tc in range(1, int(input())+1):
+#     n = int(input())
+#     table = [list(input()) for _ in range(n)]
+#     dr = [-1, -1, -1, 0, 1, 1, 1, 0]
+#     dc = [-1, 0, 1, 1, 1, 0, -1, -1]
+#     minC = 0
+#     check = []
+#     for i in range(n):
+#         for j in range(n):
+#             popping = 0
+#             for k in range(8):
+#                 if i+dr[k] < 0 or i+dr[k] >= n or j+dc[k] < 0 or j+dc[k] >= n: continue
+#                 if table[i+dr[k]][j+dc[k]] == '*':
+#                     popping = -1
+#                     break
+#             st = []
+#             if popping == 0:
+#                 table[i][j] = 0
+#                 minC += 1
+#                 st.append([i, j])
+#                 check.append([i, j])
+#             while st:
+#                 [r, c] = st.pop(0)
+#                 for l in range(8):
+#                     mine = 0
+#                     cr = r+dr[l]
+#                     cc = c+dc[l]
+#                     if cr < 0 or cr >= n or cc < 0 or cc >= n: continue
+#                     for m in range(8):
+#                         nr = cr+dr[m]
+#                         nc = cc+dc[m]
+#                         if nr < 0 or nr >= n or nc < 0 or nc >= n: continue
+#                         if table[nr][nc] == '*': mine += 1
+#                         else: continue
+#                     if mine == 0 and [cr, cc] not in check: st.append([cr, cc])
+#                     else: table[cr][cc] = mine
     
-    for i in range(n):
-        for j in range(n):
-            if table[i][j] == '.': minC += 1
-            else: continue
-    print('#{} {}'.format(tc, minC))
+#     for i in range(n):
+#         for j in range(n):
+#             if table[i][j] == '.': minC += 1
+#             else: continue
+#     print('#{} {}'.format(tc, minC))
                     
+# 4261
+
+# keypad = {'2': 'abc', '3': 'def', '4': 'ghi', '5': 'jkl', '6': 'mno', '7': 'pqrs', '8': 'tuv', '9': 'wxyz'}
+# for tc in range(1, int(input())+1):
+#     s, n = map(str, input().split())
+#     words = list(input().split())
+#     cnt = 0
+#     for i in range(int(n)):
+#         if len(words[i]) == len(s):
+#             for j in range(len(words[i])):
+#                 if words[i][j] not in keypad[s[j]]: 
+#                     break
+#             else: cnt += 1
+#     print(f'#{tc} {cnt}')
+
+# 3501
+
+# for tc in range(1, int(input())+1):
+#     p, q = map(int, input().split())
+#     if q == 1:
+#         print('#{} {}'.format(tc, p))
+#     elif q % 2 == 0 or q % 5 == 0 or (q % 2) % 5 == 0:
+#         print('#{} {}'.fomrat(tc, p/q))
+#     else:
+
+# 5213
+
+# result = [0]
+# for i in range(1, 1000001):
+#     sum = 0
+#     for j in range(1, i+1):
+#         if j % 2 == 1 and i % j == 0:
+#             sum += j
+#     result += [sum]
+
+# for tc in range(1, int(input())+1):
+#     l, r = map(int, input().split())
+#     ans = 0
+#     for t in range(l, r+1):
+#         ans += result[t]
+#     print('#{} {}'.format(tc, ans))
+
+# 3812
+
+# for tc in range(1, int(input())+1):
+    
+# 3378
+
+# for tc in range(1, int(input())+1):
+#     p, q = map(int, input().split())
+#     master = [list(map(str, input())) for _ in range(p)]
+#     mine = [list(map(str, input())) for _ in range(q)]
+#     indent = [0]
+#     a, b, c, d, e, f = 0, 0, 0, 0, 0, 0
+#     possible = []
+#     for i in range(1, p):
+#         a += master[i-1].count('(')
+#         b += master[i-1].count(')')
+#         c += master[i-1].count('{')
+#         d += master[i-1].count('}')
+#         e += master[i-1].count('[')
+#         f += master[i-1].count(']')
+#         cnt = 0
+#         for j in master[i]:
+#             if j != '.': break
+#             else: cnt += 1
+#         possible += [[(a-b), (c-d), (e-f), cnt]]
+
+#     for r in range(1, 21):
+#         for c in range(1, 21):
+#             for s in range(1, 21):
+                
+
+    # a, b, c, d, e, f = 0, 0, 0, 0, 0, 0        
+    # for i in range(1, q):
+    #     a += mine[i-1].count('(')
+    #     b += mine[i-1].count(')')
+    #     c += mine[i-1].count('{')
+    #     d += mine[i-1].count('}')
+    #     e += mine[i-1].count('[')
+    #     f += mine[i-1].count(']')
+    #     if ((a-b) != 0 and R == -1) or ((c-d) != 0 and C == -1) or ((e-f) != 0 and S == -1):
+    #         indent.append(-1)
+    #     else:
+    #         indentation = R*(a-b) + C*(c-d) + S*(e-f)
+    #         indent.append(indentation)
+        
+    # print('#{} {}'.format(tc, ' '.join(map(str, indent))))
+
+# 1808
+
+# for tc in range(1, int(input())+1):
+#     buttons = list(map(int, input().split()))
+#     x = int(input())
+#     minP = 1000000000000
+#     nums =[i for i in range(10) if buttons[i] == 1]
+#     check_x = 1
+#     for k in range(len(str(x))):
+#         if int(str(x)[k]) in nums: continue
+#         else:
+#             check_x = -1
+#             break
+#     if check_x == 1:
+#         minP = len(str(x))+1
+#     else:
+#         for i in range(int(x**0.5), 0, -1):
+#             if x % i == 0:
+#                 check_i = 1
+#                 check_xi = 1
+#                 for j in range(len(str(i))):
+#                     if int(str(i)[j]) in nums: continue
+#                     else: 
+#                         check_i = -1
+#                         break
+#                 for j in range(len(str(x//i))):
+#                     if int(str(x//i)[j]) in nums: continue
+#                     else:
+#                         check_xi = -1
+#                         break
+#                 if check_i == 1 and check_xi == 1: 
+#                     P = len(str(i)) + len(str(x//i)) + 2
+#                     if P < minP: minP = P
+#     if minP != 1000000000000:
+#         print(f'#{tc} {minP}')
+#     else:
+#         print(f'#{tc} {-1}')
+
+# 4050
+
+# for tc in range(1, int(input())+1):
+#     n = int(input())
+#     c = list(map(int, input().split()))
+#     c.sort(reverse=True)
+#     minP = 0
+#     for i in range(n):
+#         if i%3 == 2: continue
+#         else:
+#             minP += c[i]
+#     print('#{} {}'.format(tc, minP))
+
+# 5987
+
+# for tc in range(1, int(input())+1):
+#     n, m = map(int, input().split())
+    
+# 1211
+
+def find(r, c):
+    global minD
+    global si
+    dr = [1, 0, 0]
+    dc = [0, 1, -1]
+    cnt = 0
+    cr, cc = r, c
+    nr, nc = cr+dr[0], cc+dc[0]
+    while nr != 100:
+        if laddar[cr+dr[1]][cc+dc[1]] == 1:
+            rr, rc = cr+dr[1], cc+dc[1]
+            while laddar[rr][rc] != 0:
+                cnt += 1
+                cr, cc = rr, rc
+                rr, rc = cr+dr[1], cc+dc[1]
+        elif laddar[cr+dr[2]][cc+dc[2]] == 1:
+            lr, lc = cr+dr[2], cc+dc[2]
+            while laddar[lr][lc] != 0:
+                cnt += 1
+                cr, cc = lr, lc
+                lr, lc = cr+dr[2], cc+dc[2]
+        else:
+            cnt += 1
+            cr, cc = nr, nc
+            nr, nc = cr+dr[0], cc+dc[0]
+    if minD > cnt:
+        minD = cnt
+        si = c
+    elif minD == cnt:
+        if si > c:
+            si = c
+    return
+
+for tc in range(1, 11):
+    n = int(input())
+    laddar = [list(map(int, input().split())) for _ in range(100)]
+    minD = 100000000
+    si = 0
+    for i in range(100):
+        if laddar[0][i] == 1:
+            find(0, i)
+    print('#{} {}'.format(tc, si))

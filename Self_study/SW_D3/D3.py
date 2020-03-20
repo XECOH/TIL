@@ -425,16 +425,18 @@
 
 # 5607
 
-# for tc in range(int(input())):
-#     n, r = map(int, input().split())
-#     result1 = 1
-#     result2 = 1
-#     for i in range(1, n+1):
-#         result1 *= i
-#     for j in range(1, r+1):
-#         result2 *= ((i * (n-i)) ** (1234567891-2))
-#
-#     print('#{} {}'.format(tc+1, ))
+
+for tc in range(int(input())):
+    n, r = map(int, input().split())
+    p = 1234567891
+    top = 1
+    bottom = 1
+    for i in range(1, r+1):
+        top *= (n-(i-1))
+        bottom *= i
+    print('#{} {}'.format(tc, (top//bottom)%p))
+
+
 
 # 5688
 
@@ -712,23 +714,9 @@
 
 # 3304
 
-# for tc in range(int(input())):
-#     s1, s2 = input().split()
-#     lcs = ''
-#     j = 0
-#     stored = 0
-#     for i in range(len(s1)):
-#         while j < len(s2):
-#             if s1[i] == s2[j]:
-#                 lcs += s1[i]
-#                 stored = j+1
-#                 break
-#             else:
-#                 j += 1
-#         if j == len(s2):
-#             j = stored
-#         if stored >= len(s2): break
-#     print('#{} {}'.format(tc+1, len(lcs)))
+for tc in range(1, int(input())+1):
+    s1, s2 = input().split()
+    
 
 
 # 3233
@@ -1204,3 +1192,11 @@
 #                 cnt[s] += 1
 #                 cnt[-s] -= 1
 #     print('#{} {} {}'.format(tc, cnt[1], cnt[2]))
+
+# 3282
+
+for tc in range(1, int(input())+1):
+    n, k = map(int, input().split()) # k는 가방의 부피
+    bag = [list(map(int, input().split())) for _ in range(n)]
+    maxV = 0
+    
