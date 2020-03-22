@@ -904,26 +904,37 @@ def find(r, c):
     global si
     dr = [1, 0, 0]
     dc = [0, 1, -1]
+    visited = [0] * 100
     cnt = 0
     cr, cc = r, c
-    nr, nc = cr+dr[0], cc+dc[0]
-    while nr != 100:
-        if laddar[cr+dr[1]][cc+dc[1]] == 1:
-            rr, rc = cr+dr[1], cc+dc[1]
-            while laddar[rr][rc] != 0:
-                cnt += 1
-                cr, cc = rr, rc
-                rr, rc = cr+dr[1], cc+dc[1]
-        elif laddar[cr+dr[2]][cc+dc[2]] == 1:
-            lr, lc = cr+dr[2], cc+dc[2]
-            while laddar[lr][lc] != 0:
-                cnt += 1
-                cr, cc = lr, lc
-                lr, lc = cr+dr[2], cc+dc[2]
-        else:
+    while cr != 99:
+        rr, rc = cr+dr[1], cc+dc[1]
+        lr, lc = cr+dr[2], cc+dc[2]
+        if rc < 100 and visited[cr] != 1 and laddar[rr][rc] == 1:
+            cr, cc = rr, rc
             cnt += 1
-            cr, cc = nr, nc
-            nr, nc = cr+dr[0], cc+dc[0]
+            rr, rc = cr+dr[1], cc+dc[1] 
+            while laddar[rr][rc] != 0 and rc < 100:
+                cr, cc = rr, rc
+                cnt += 1
+                rr, rc = cr+dr[1], cc+dc[1]
+                if rc >= 100: break
+            visited[cr] = 1
+        elif 0 <=lc and visited[cr] != 1 and laddar[lr][lc] == 1:
+            cr, cc = lr, lc
+            cnt += 1
+            lr, lc = cr+dr[2], cc+dc[2]
+            while laddar[lr][lc] !=0 and lc >= 0:
+                cr, cc = lr, lc
+                cnt += 1
+                lr, lc = cr+dr[2], cc+dc[2]
+                if lc < 0: break
+            visited[cr] = 1
+        else:
+            visited[cr] = 1
+            cr, cc = cr+dr[0], cc+dc[0]
+            cnt += 1
+            
     if minD > cnt:
         minD = cnt
         si = c
@@ -932,7 +943,7 @@ def find(r, c):
             si = c
     return
 
-for tc in range(1, 11):
+for tc in range(1, 2):
     n = int(input())
     laddar = [list(map(int, input().split())) for _ in range(100)]
     minD = 100000000
