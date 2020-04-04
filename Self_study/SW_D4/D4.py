@@ -143,9 +143,55 @@
 
 # 1868
 
-# for tc in range(int(input())):
-#     n = int(input())
-#     table = [list(map(str, input())) for _ in range(n)]
+def click(r, c):
+    global cnt
+    dr = [-1, -1, -1, 0, 1, 1, 1, 0]
+    dc = [-1, 0, 1, 1, 1, 0, -1, -1]
+    for k in range(8): # 0인 친구 8방 확인 해주기
+        nr = r + dr[k] 
+        nc = c + dc[k]
+        if nr < 0 or nr >= n or nc < 0 or nc >= n : continue
+        if visited[nr][nc] != 1:
+            visited[nr][nc] = 1
+            check = 0
+            for l in range(8): # 또 8방 확인 해주기
+                cr = nr + dr[l]
+                cc = nc + dc[l]
+                if cr < 0 or cr >= n or cc < 0 or cc >= n: continue
+                if visited[cr][cc] == 1: continue
+                if table[cr][cc] == '*' : check += 1
+            if check != 0:
+                table[nr][nc] = check
+            else:
+                table[nr][nc] = 0
+                click(nr, nc)
+
+for tc in range(1, int(input())+1):
+    n = int(input())
+    table = [list(input()) for _ in range(n)]
+    visited = [[0]*n for _ in range(n)]
+    cnt = 0 
+    for i in range(n):
+        for j in range(n):
+            if table[i][j] == '.':
+                di = [-1, -1, -1, 0, 1, 1, 1, 0]
+                dj = [-1, 0, 1, 1, 1, 0, -1, -1]
+                check = 0
+                for k in range(8): # 지뢰가 아닐때 8방 탐색
+                    if i+di[k] < 0 or i+di[k] >= n or j+dj[k] < 0 or j+dj[k] >= n : continue
+                    if table[i+di[k]][j+dj[k]] == '*' :
+                        check = 1
+                        break
+                if check == 0: # 8방으로 지뢰가 하나도 없을 때
+                    table[i][j] = 0 # 지뢰가 없음을 확인하고 
+                    cnt += 1 # 클릭 수 올려주고
+                    visited[i][j] = 1
+                    click(i, j) # 또 8방 확인해주기
+    for i in range(n):
+        for j in range(n):
+            if table[i][j] == '.': cnt += 1
+    print('#{} {}'.format(tc, cnt))
+
 
 # 1494
 
@@ -955,30 +1001,29 @@ for tc in range(1, int(input())+1):
 
 # 1249
 
-def find(sr, sc, gr, gc, t):
-    global minT
-    global visited
-    visited[sr][sc] = 1
-    if t > minT:
-        return
-    if sr == gr and sc == gc:
-        if minT > t:
-            minT = t
-        return
-    else:
-        dr = [-1, 0, 1, 0]
-        dc = [0, 1, 0, -1]
-        for k in range(4):
-            nr = sr + dr[k]
-            nc = sc + dc[k]
-            if 0 <= nr < n and 0 <= nc < n and visited[nr][nc] != 1:
-                find(nr, nc, gr, gc, t+int(maps[nr][nc]))   
-                visited[nr][nc] = 0     
+# def find(sr, sc, gr, gc, cnt):
+#     global minT, visited
+#     if sr == gr and sc == gc:
+#         if cnt < minT:
+#             minT = cnt
+#         return
+#     if cnt > minT:
+#         return
+#     dr = [-1, 0, 1, 0]
+#     dc = [0, 1, 0, -1]
+#     for k in range(4):
+#         nr = sr + dr[k]
+#         nc = sc + dc[k]
+#         if nr < 0 or nr >= n or nc < 0 or nc >= n: continue
+#         if visited[nr][nc] != 1:
+#             visited[nr][nc] = 1
+#             find(nr, nc, gr, gc, cnt+maps[sr][sc])
+#             visited[nr][nc] = 0
 
-for tc in range(1, int(input())+1):
-    n = int(input())
-    maps = [list(input()) for _ in range(n)]
-    visited = [[0]*n for _ in range(n)]
-    minT = 100000000000000
-    find(0, 0, n-1, n-1, 0)
-    print('#{} {}'.format(tc, minT))
+# for tc in range(1, int(input())+1):
+#     n = int(input())
+#     maps = [list(map(int, input())) for _ in range(n)]
+#     visited = [[0]*n for _ in range(n)]
+#     minT = 1000000
+#     find(0, 0, n-1, n-1, 0)
+#     print('#{} {}'.format(tc, minT))
