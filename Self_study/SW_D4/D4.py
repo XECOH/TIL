@@ -143,54 +143,54 @@
 
 # 1868
 
-def click(r, c):
-    global cnt
-    dr = [-1, -1, -1, 0, 1, 1, 1, 0]
-    dc = [-1, 0, 1, 1, 1, 0, -1, -1]
-    for k in range(8): # 0인 친구 8방 확인 해주기
-        nr = r + dr[k] 
-        nc = c + dc[k]
-        if nr < 0 or nr >= n or nc < 0 or nc >= n : continue
-        if visited[nr][nc] != 1:
-            visited[nr][nc] = 1
-            check = 0
-            for l in range(8): # 또 8방 확인 해주기
-                cr = nr + dr[l]
-                cc = nc + dc[l]
-                if cr < 0 or cr >= n or cc < 0 or cc >= n: continue
-                if visited[cr][cc] == 1: continue
-                if table[cr][cc] == '*' : check += 1
-            if check != 0:
-                table[nr][nc] = check
-            else:
-                table[nr][nc] = 0
-                click(nr, nc)
+# def click(r, c):
+#     global cnt
+#     dr = [-1, -1, -1, 0, 1, 1, 1, 0]
+#     dc = [-1, 0, 1, 1, 1, 0, -1, -1]
+#     for k in range(8): 
+#         nr = r + dr[k] 
+#         nc = c + dc[k]
+#         if nr < 0 or nr >= n or nc < 0 or nc >= n : continue
+#         if visited[nr][nc] != 1:
+#             visited[nr][nc] = 1
+#             check = 0
+#             for l in range(8): 
+#                 cr = nr + dr[l]
+#                 cc = nc + dc[l]
+#                 if cr < 0 or cr >= n or cc < 0 or cc >= n: continue
+#                 if visited[cr][cc] == 1: continue
+#                 if table[cr][cc] == '*' : check += 1
+#             if check != 0:
+#                 table[nr][nc] = check
+#             else:
+#                 table[nr][nc] = 0
+#                 click(nr, nc)
 
-for tc in range(1, int(input())+1):
-    n = int(input())
-    table = [list(input()) for _ in range(n)]
-    visited = [[0]*n for _ in range(n)]
-    cnt = 0 
-    for i in range(n):
-        for j in range(n):
-            if table[i][j] == '.':
-                di = [-1, -1, -1, 0, 1, 1, 1, 0]
-                dj = [-1, 0, 1, 1, 1, 0, -1, -1]
-                check = 0
-                for k in range(8): # 지뢰가 아닐때 8방 탐색
-                    if i+di[k] < 0 or i+di[k] >= n or j+dj[k] < 0 or j+dj[k] >= n : continue
-                    if table[i+di[k]][j+dj[k]] == '*' :
-                        check = 1
-                        break
-                if check == 0: # 8방으로 지뢰가 하나도 없을 때
-                    table[i][j] = 0 # 지뢰가 없음을 확인하고 
-                    cnt += 1 # 클릭 수 올려주고
-                    visited[i][j] = 1
-                    click(i, j) # 또 8방 확인해주기
-    for i in range(n):
-        for j in range(n):
-            if table[i][j] == '.': cnt += 1
-    print('#{} {}'.format(tc, cnt))
+# for tc in range(1, int(input())+1):
+#     n = int(input())
+#     table = [list(input()) for _ in range(n)]
+#     visited = [[0]*n for _ in range(n)]
+#     cnt = 0 
+#     for i in range(n):
+#         for j in range(n):
+#             if table[i][j] == '.':
+#                 di = [-1, -1, -1, 0, 1, 1, 1, 0]
+#                 dj = [-1, 0, 1, 1, 1, 0, -1, -1]
+#                 check = 0
+#                 for k in range(8): 
+#                     if i+di[k] < 0 or i+di[k] >= n or j+dj[k] < 0 or j+dj[k] >= n : continue
+#                     if table[i+di[k]][j+dj[k]] == '*' :
+#                         check = 1
+#                         break
+#                 if check == 0: 
+#                     table[i][j] = 0 
+#                     cnt += 1 
+#                     visited[i][j] = 1
+#                     click(i, j) 
+#     for i in range(n):
+#         for j in range(n):
+#             if table[i][j] == '.': cnt += 1
+#     print('#{} {}'.format(tc, cnt))
 
 
 # 1494
@@ -1027,3 +1027,27 @@ for tc in range(1, int(input())+1):
 #     minT = 1000000
 #     find(0, 0, n-1, n-1, 0)
 #     print('#{} {}'.format(tc, minT))
+
+# 2819
+
+def find(r, c, num):
+    global ans
+    dr = [-1, 0, 1, 0]
+    dc = [0, 1, 0, -1]
+    if len(num) == 7:
+        ans.add(num)
+        return
+    else:
+        for k in range(4):
+            nr = r+dr[k]
+            nc = c+dc[k]
+            if nr < 0 or nr >= 4 or nc < 0 or nc >= 4: continue
+            find(nr, nc, num+str(grid[r][c]))
+
+for tc in range(1, int(input())+1):
+    grid = [list(map(int, input().split())) for _ in range(4)]
+    ans = set()
+    for i in range(4):
+        for j in range(4):
+            find(i, j, '')
+    print('#{} {}'.format(tc, len(ans)))
