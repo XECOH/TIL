@@ -10,31 +10,22 @@
 
 # 5110
 
-class node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-
-class linkedlist:
-    def __init__(self, head= None):
-        self.head = head
-        self.tail = headnode
-        self.numofdata = 0
-
-    def insert(self, data):
-        insertnode = node(data)
-        self.tail.next = insertnode
-        self.tail = insertnode
-        self.numofdata += 1
-        
 for tc in range(1, int(input())+1):
     n, m = map(int, input().split())
     nums = list(map(int, input().split()))
     for _ in range(m-1):
+        l = len(nums)
         temp = list(map(int, input().split()))
-        s = temp[0]
-        
+        f = temp[0]
+        for i in range(l):
+            if nums[i] > f:
+                nums[i:0] = temp
+                break
+        ll = len(nums)
+        if l == ll:
+            nums += temp
     print('#{} {}'.format(tc, ' '.join(map(str, nums[-1:-11:-1]))))
+
 
 # 5120
 
