@@ -426,15 +426,15 @@
 # 5607
 
 
-for tc in range(int(input())):
-    n, r = map(int, input().split())
-    p = 1234567891
-    top = 1
-    bottom = 1
-    for i in range(1, r+1):
-        top *= (n-(i-1))
-        bottom *= i
-    print('#{} {}'.format(tc, (top//bottom)%p))
+# for tc in range(int(input())):
+#     n, r = map(int, input().split())
+#     p = 1234567891
+#     top = 1
+#     bottom = 1
+#     for i in range(1, r+1):
+#         top *= (n-(i-1))
+#         bottom *= i
+#     print('#{} {}'.format(tc, (top//bottom)%p))
 
 
 
@@ -714,10 +714,9 @@ for tc in range(int(input())):
 
 # 3304
 
-for tc in range(1, int(input())+1):
-    s1, s2 = input().split()
+# for tc in range(1, int(input())+1):
+#     s1, s2 = input().split()
     
-
 
 # 3233
 
@@ -1148,13 +1147,51 @@ for tc in range(1, int(input())+1):
 
 # 5293
 
-# def res():
-#
-#
-# for tc in range(int(input())):
-#     bi = ['00', '01', '10', '11']
-#     abcd = list(map(int, input().split()))
-#     print('#{} {}'.format(tc+1, ))
+def find(arr):
+    global ans
+    l = len(arr)
+    check = [0]*l
+    for _ in range(l):
+        for i in range(l):
+            if ans == '':
+                ans += arr[i]
+                check[i] = 1
+            else:
+                if ans[-1] == arr[i][0] and check[i] != 1:
+                    ans += arr[i][1]
+                    check[i] = 1
+                elif ans[0] == arr[i][1] and check[i] != 1:
+                    ans = arr[i][0] + ans
+                    check[i] = 1
+            if len(ans) == l+1: break
+        if len(ans) == l+1: break
+    return
+
+bit = ['00', '01', '10', '11']
+for tc in range(1, int(input())+1):
+    ans = ''
+    info = list(map(int, input().split()))
+    binary = []
+    for i in range(1, 4):
+        if info[i] % 2:
+            for _ in range(info[i]):
+                binary.insert(0, bit[i])
+        else:
+            for _ in range(info[i]):
+                binary.append(bit[i])
+    find(binary)
+    if len(ans) == len(binary)+1 and '0' in ans:
+        zz = info[0] * '0'
+        ans = ans[:ans.index('0')+1] + zz + ans[ans.index('0')+1:]
+        print('#{} {}'.format(tc, ans))
+    elif ans== '':
+        ans += '00'
+        ans += (info[0]-1) * '0'
+        print('#{} {}'.format(tc, ans))
+    elif len(ans) == len(binary)+1 and info[0] == 0:
+        print('#{} {}'.format(tc, ans))
+    else:
+        print('#{} {}'.format(tc, 'impossible'))
 
 # 4615
 
@@ -1196,7 +1233,25 @@ for tc in range(1, int(input())+1):
 # 3282
 
 for tc in range(1, int(input())+1):
-    n, k = map(int, input().split()) # k는 가방의 부피
-    bag = [list(map(int, input().split())) for _ in range(n)]
+    N, K = map(int, input().split()) # k는 가방의 부피
+    bag = [list(map(int, input().split())) for _ in range(N)]
     maxV = 0
-    
+    for i in range(N):
+        v = bag[i][0]
+        c = bag[i][1]
+        for j in range(i+1, N):
+            v += bag[j][0]
+            if v < K:
+                c += bag[j][1]
+                for k in range(j+1, N):
+                    v += bag[k][0]
+                    if v < K:
+                        c += bag[k][1]
+                    else:
+                        v -= bag[k][0]
+            else:
+                v -= bag[j][0]
+        if c > maxV:
+            maxV = c
+    print('#{} {}'.format(tc, maxV))
+
