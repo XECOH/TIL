@@ -1030,24 +1030,24 @@ for tc in range(1, int(input())+1):
 
 # 2819
 
-def find(r, c, num):
-    global ans
-    dr = [-1, 0, 1, 0]
-    dc = [0, 1, 0, -1]
-    if len(num) == 7:
-        ans.add(num)
-        return
-    else:
-        for k in range(4):
-            nr = r+dr[k]
-            nc = c+dc[k]
-            if nr < 0 or nr >= 4 or nc < 0 or nc >= 4: continue
-            find(nr, nc, num+str(grid[r][c]))
+# def find(r, c, num):
+#     global ans
+#     dr = [-1, 0, 1, 0]
+#     dc = [0, 1, 0, -1]
+#     if len(num) == 7:
+#         ans.add(num)
+#         return
+#     else:
+#         for k in range(4):
+#             nr = r+dr[k]
+#             nc = c+dc[k]
+#             if nr < 0 or nr >= 4 or nc < 0 or nc >= 4: continue
+#             find(nr, nc, num+str(grid[r][c]))
 
-for tc in range(1, int(input())+1):
-    grid = [list(map(int, input().split())) for _ in range(4)]
-    ans = set()
-    for i in range(4):
-        for j in range(4):
-            find(i, j, '')
-    print('#{} {}'.format(tc, len(ans)))
+# for tc in range(1, int(input())+1):
+#     grid = [list(map(int, input().split())) for _ in range(4)]
+#     ans = set()
+#     for i in range(4):
+#         for j in range(4):
+#             find(i, j, '')
+#     print('#{} {}'.format(tc, len(ans)))
