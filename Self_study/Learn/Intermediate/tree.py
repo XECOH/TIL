@@ -29,8 +29,11 @@
 
 for tc in range(1, int(input())+1):
     n = int(input())
-    binary_tree = [0] * (n+1)
-    
+    binary_tree = [0] * (n+2)
+    for i in range(1, n+1):
+        binary_tree[i] = i
+        if i > 1:
+
     print('#{} {} {}'.format(tc, binary_tree[1], binary_tree[n//2]))
 
 # 5178
