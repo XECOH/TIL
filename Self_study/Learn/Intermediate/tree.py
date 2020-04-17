@@ -29,12 +29,37 @@
 
 for tc in range(1, int(input())+1):
     n = int(input())
-    binary_tree = [0] * (n+2)
-    for i in range(1, n+1):
-        binary_tree[i] = i
-        if i > 1:
 
-    print('#{} {} {}'.format(tc, binary_tree[1], binary_tree[n//2]))
+
+# 5177
+
+# class BinHeap:
+#     def __init__(self):
+#         self.binheap = [0]
+#         self.size = 0
+    
+#     def insertBH(self, i):
+#         self.binheap.append(i)
+#         self.size += 1
+#         k = self.size
+#         while k // 2 > 0:
+#             if self.binheap[k] < self.binheap[k//2]:
+#                 self.binheap[k//2], self.binheap[k] = self.binheap[k], self.binheap[k//2]
+#                 k = k // 2
+#             else: break
+
+# for tc in range(1, int(input())+1):
+#     n = int(input())
+#     nods = list(map(int, input().split()))
+#     bh = BinHeap()
+#     for nod in nods:
+#         bh.insertBH(nod)
+#     t = bh.size
+#     hap = 0
+#     while t // 2 > 0 :
+#         hap += bh.binheap[t//2]
+#         t = t // 2
+#     print('#{} {}'.format(tc, hap))
 
 # 5178
 
