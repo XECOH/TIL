@@ -1,3 +1,4 @@
+# 메모리 초과
 for tc in range(1, int(input())+1):
     N, string = map(str, input().split())
     strings = set()
