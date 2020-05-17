@@ -1,27 +1,37 @@
 def merge(L, R):
     global p
-    ans = []
+    ans = [0] * (len(L)+len(R))
     if L[-1] > R[-1]:
         p += 1
-    while len(L) > 0 and len(R) > 0:
-        if L[0] < R[0]:
-            ans += [L.pop(0)]
+    l, r = 0, 0
+    i = 0
+    while len(L) != l  and len(R) != r:
+        if L[l] < R[r]:
+            ans[i] = L[l]
+            l += 1
+            i += 1
         else:
-            ans += [R.pop(0)]
-    if len(L) > 0:
-        ans += L
-    if len(R) > 0:
-        ans += R
+            ans[i] = R[r]
+            i += 1
+            r += 1
+    if len(L) != l:
+        while len(L) != l:
+            ans[i] = L[l]
+            i += 1
+            l += 1
+    if len(R) != r:
+        while len(R) != r:
+            ans[i] = R[r]
+            i += 1
+            r += 1
     return ans
 
 def mergesort(arr):
     if len(arr) <= 1:
         return arr
     c = len(arr)//2
-    left = arr[:c]
-    right = arr[c:]
-    left = mergesort(left)
-    right = mergesort(right)
+    left = mergesort(arr[:c])
+    right = mergesort(arr[c:])
     return merge(left, right)
 
 for tc in range(1, int(input())+1):
