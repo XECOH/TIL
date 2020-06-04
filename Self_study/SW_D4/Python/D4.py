@@ -679,12 +679,6 @@ for tc in range(1, int(input())+1):
 #     find(n)
 #     print('#{} {}'.format(tc, minC))
 
-# 6109
-
-# for tc in range(1, int(input())+1):
-#     n, d = map(input().split())
-#     grid = [list(map(int, input().split())) for _ in range(int(n))]
-
 # 3143
 
 # for tc in range(1, int(input())+1):

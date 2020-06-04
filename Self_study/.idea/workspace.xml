@@ -1,10 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="03c998fb-542e-403d-9401-6cbac93d3eb2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Self_study.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Self_study.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SW_D4/Python/1251.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SW_D4/Python/1486.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SW_D5/Python/5521.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SW_D3/Python/1244.py" beforeDir="false" afterPath="$PROJECT_DIR$/SW_D3/Python/1244.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SW_D3/Python/3282.py" beforeDir="false" afterPath="$PROJECT_DIR$/SW_D3/Python/3282.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SW_D4/Python/1249.py" beforeDir="false" afterPath="$PROJECT_DIR$/SW_D4/Python/1249.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SW_D4/Python/6109.py" beforeDir="false" afterPath="$PROJECT_DIR$/SW_D4/Python/6109.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SW_D4/Python/D4.py" beforeDir="false" afterPath="$PROJECT_DIR$/SW_D4/Python/D4.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/모의SW/1949.py" beforeDir="false" afterPath="$PROJECT_DIR$/모의SW/1949.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,8 +65,8 @@
       <recent name="$PROJECT_DIR$/../../lectures/Algorithm_class" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.xcxc">
-    <configuration name="A형대비" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.1251">
+    <configuration name="1248" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Self_study" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -49,11 +74,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SW_D5/Python" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/A형대비.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SW_D5/Python/1248.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -62,7 +87,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="D4" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="1249" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Self_study" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -70,11 +95,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SW_D4" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SW_D4/Python" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SW_D4/D4.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SW_D4/Python/1249.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -83,7 +108,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="모의SW" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="1251" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Self_study" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -91,11 +116,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SW_D4/Python" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/모의SW.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SW_D4/Python/1251.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -104,7 +129,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="queue" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="1949" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Self_study" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -112,11 +137,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/모의SW" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/queue.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/모의SW/1949.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -125,7 +150,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="xcxc" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="5521" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Self_study" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -133,11 +158,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../.." />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/SW_D5/Python" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../../xcxc.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/SW_D5/Python/5521.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -148,11 +173,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.xcxc" />
-        <item itemvalue="Python.queue" />
-        <item itemvalue="Python.모의SW" />
-        <item itemvalue="Python.A형대비" />
-        <item itemvalue="Python.D4" />
+        <item itemvalue="Python.1251" />
+        <item itemvalue="Python.1249" />
+        <item itemvalue="Python.5521" />
+        <item itemvalue="Python.1248" />
+        <item itemvalue="Python.1949" />
       </list>
     </recent_temporary>
   </component>
@@ -169,55 +194,80 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="933" y="171" key="FileChooserDialogImpl" timestamp="1583638934859">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="933" y="171" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1583638934859" />
-    <state width="748" height="251" key="GridCell.Tab.0.bottom" timestamp="1583638973549">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1259" height="382" key="GridCell.Tab.0.bottom" timestamp="1591249461048">
+      <screen x="0" y="23" width="2560" height="1350" />
     </state>
     <state width="748" height="251" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583638973548" />
-    <state width="748" height="251" key="GridCell.Tab.0.center" timestamp="1583638973548">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1259" height="382" key="GridCell.Tab.0.bottom/0.23.2560.1350@0.23.2560.1350" timestamp="1591249461048" />
+    <state width="1259" height="382" key="GridCell.Tab.0.center" timestamp="1591249461047">
+      <screen x="0" y="23" width="2560" height="1350" />
     </state>
     <state width="748" height="251" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1583638973548" />
-    <state width="748" height="251" key="GridCell.Tab.0.left" timestamp="1583638973548">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1259" height="382" key="GridCell.Tab.0.center/0.23.2560.1350@0.23.2560.1350" timestamp="1591249461047" />
+    <state width="1259" height="382" key="GridCell.Tab.0.left" timestamp="1591249461047">
+      <screen x="0" y="23" width="2560" height="1350" />
     </state>
     <state width="748" height="251" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1583638973548" />
-    <state width="748" height="251" key="GridCell.Tab.0.right" timestamp="1583638973548">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1259" height="382" key="GridCell.Tab.0.left/0.23.2560.1350@0.23.2560.1350" timestamp="1591249461047" />
+    <state width="1259" height="382" key="GridCell.Tab.0.right" timestamp="1591249461048">
+      <screen x="0" y="23" width="2560" height="1350" />
     </state>
     <state width="748" height="251" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583638973548" />
-    <state width="748" height="251" key="GridCell.Tab.1.bottom" timestamp="1583638973549">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1259" height="382" key="GridCell.Tab.0.right/0.23.2560.1350@0.23.2560.1350" timestamp="1591249461048" />
+    <state width="1259" height="469" key="GridCell.Tab.1.bottom" timestamp="1590822331181">
+      <screen x="0" y="23" width="2560" height="1350" />
     </state>
     <state width="748" height="251" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1583638973549" />
-    <state width="748" height="251" key="GridCell.Tab.1.center" timestamp="1583638973549">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1259" height="469" key="GridCell.Tab.1.bottom/0.23.2560.1350@0.23.2560.1350" timestamp="1590822331181" />
+    <state width="1259" height="469" key="GridCell.Tab.1.center" timestamp="1590822331181">
+      <screen x="0" y="23" width="2560" height="1350" />
     </state>
     <state width="748" height="251" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1583638973549" />
-    <state width="748" height="251" key="GridCell.Tab.1.left" timestamp="1583638973549">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1259" height="469" key="GridCell.Tab.1.center/0.23.2560.1350@0.23.2560.1350" timestamp="1590822331181" />
+    <state width="1259" height="469" key="GridCell.Tab.1.left" timestamp="1590822331181">
+      <screen x="0" y="23" width="2560" height="1350" />
     </state>
     <state width="748" height="251" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1583638973549" />
-    <state width="748" height="251" key="GridCell.Tab.1.right" timestamp="1583638973549">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1259" height="469" key="GridCell.Tab.1.left/0.23.2560.1350@0.23.2560.1350" timestamp="1590822331181" />
+    <state width="1259" height="469" key="GridCell.Tab.1.right" timestamp="1590822331181">
+      <screen x="0" y="23" width="2560" height="1350" />
     </state>
     <state width="748" height="251" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1583638973549" />
+    <state width="1259" height="469" key="GridCell.Tab.1.right/0.23.2560.1350@0.23.2560.1350" timestamp="1590822331181" />
     <state x="1421" y="330" key="SettingsEditor" timestamp="1588144470173">
       <screen x="0" y="23" width="2560" height="1337" />
     </state>
     <state x="1421" y="330" key="SettingsEditor/0.23.2560.1337@0.23.2560.1337" timestamp="1588144470173" />
+    <state width="640" height="668" key="XDebugger.FullValuePopup" timestamp="1590640871921">
+      <screen x="0" y="23" width="2560" height="1350" />
+    </state>
+    <state width="640" height="668" key="XDebugger.FullValuePopup/0.23.2560.1350@0.23.2560.1350" timestamp="1590640871921" />
     <state x="471" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1583134021227">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="471" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1583134021227" />
-    <state x="815" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1583320242176">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="1358" y="261" width="1120" height="1111" key="search.everywhere.popup" timestamp="1590679421405">
+      <screen x="0" y="23" width="2560" height="1350" />
     </state>
     <state x="815" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1583320242176" />
+    <state x="1358" y="261" width="1120" height="1111" key="search.everywhere.popup/0.23.2560.1350@0.23.2560.1350" timestamp="1590679421405" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -246,6 +296,36 @@
           <url>file://$PROJECT_DIR$/queue.py</url>
           <line>22</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/모의SW/1953.py</url>
+          <line>9</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/SW_D3/Python/3282.py</url>
+          <line>2</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/모의SW/1949.py</url>
+          <line>6</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/SW_D5/Python/1248.py</url>
+          <line>35</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/SW_D4/Python/1251.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/SW_D4/Python/1249.py</url>
+          <line>5</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
